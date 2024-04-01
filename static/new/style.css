@@ -1,0 +1,861 @@
+﻿:root{
+    --yellowgreen:#9ACD32;
+    --chocolate:#7B3F00;
+    --black:#333;
+    --light-color:#777;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+section {
+    padding:10px;
+}
+#msger{
+    padding:0px  !important;
+    position: relative;
+    left: 45px;
+    bottom: -50px;
+}
+
+.btn{
+    display: inline-block;
+    background: rgb(9, 117, 9);
+    margin-top: 1rem;
+    color:#fff;
+    font-size: 1.7rem;
+    padding:1rem 3rem;
+    cursor: pointer;
+ }
+
+.btn:hover {
+    background:yellowgreen;
+}
+
+.header{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    /* background: #fff;                           header alignment */
+    /* box-shadow: var(--box-shadow); */
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 7%;
+}
+
+.header .logo{
+    font-size: 85%;                         /*"touch" heading colour alignment*/
+    color:var(--chocolate);         
+    font-family: 'Times New Roman';
+    font-size: 3.0rem;
+    margin-right: auto;
+}
+
+.header .logo span{
+    font-size: 95%;
+    font-family: 'Times New Roman';         /*"farmer" heading colour alignment*/
+    color:limegreen;
+    font-size: 3.5rem;
+}
+
+.header .avatar{
+	position:absolute;
+	width:8rem;
+	height:7rem;
+	border-radius:50%;
+}
+
+
+.header .navbar a{
+    font-family: 'Times New Roman';
+    color:var(--light-color);           /*navigated bars alignment*/
+    margin-right:2rem;
+    font-size:1.7rem;
+    text-transform: capitalize;
+}
+
+.header .navbar a:hover{
+    color:var(--yellowgreen);           /*anvigated bars bacjground colour setting*/
+}
+
+.header .icons i{
+    height:4.5rem;
+    line-height:4.5rem;                 /*icons alignment and colour setting*/
+    width:4.5rem;
+    text-align:center;
+    color:black;
+    background:#eee;
+    border-radius:50%;
+    margin-left:.7rem;
+    font-size:1.7rem;
+    cursor:pointer;
+}
+.header .icons h6{
+    height:4.5rem;
+    line-height:4.5rem;                 /*icons alignment and colour setting*/
+    width:4.5rem;
+    text-align:center;
+    color:black;
+    border-radius:100%;
+    margin-left:.5rem;
+    font-size:3rem;
+    cursor:pointer;
+}
+
+.header .icons i:hover{
+    color:#fff;             /*icons background colour*/
+    background:rgb(35, 83, 35);
+}
+.header .icons h6:hover{
+    color:#fff;             /*icons background colour*/
+    background:rgb(35, 83, 35);
+}
+
+.header .search-form{
+    position:absolute;          /*seacrhbox tab creation*/
+    background:#fff;
+    border-radius:.5rem;
+    display:flex;
+    align-items:center;
+    box-shadow:var(--box-shadow);
+    top:110%;
+    right:7%;
+    height:6rem;
+    width:50rem;
+    padding:1rem;
+    display:none;          /*to hide the search box not to display on the screen directly*/
+}
+
+.header .search-form.active{
+    display:flex;
+ }
+
+.header .search-form #search-box{
+    width:100%;                 /*searchbox tab display*/
+    border:var(--border);
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.5rem;
+    color:black;
+    height:100%;
+}
+
+.header .search-form label{
+    font-size: 1.5rem;     /*magnifier size*/
+    padding-left:1rem;     /*maginifier movements*/
+    padding-right:.5rem;
+    cursor:pointer;
+    color:var(--black);
+}
+
+.header .search-form label:hover{
+    color:var(--yellowgreen);
+}
+
+#menu-bars{
+    display: none;
+}
+
+
+.banner {
+    min-height:100vh;
+    /* background:url(../images/mainbackground.jpg) no-repeat; */
+    background: url("{{ url_for('static', filename='main/images/mainbackground.jpg') | safe }}") no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:grid;
+    place-items:center;
+    padding-top:8rem;
+}
+
+.banner .content{
+    text-align:center;
+    background:transparent;
+    border-radius:.5rem;
+    box-shadow:var(--box-shadow);
+    padding:2rem;
+    max-width:50rem;
+}
+
+.banner .content h3 {
+    font-family:'Times New Roman';
+    font-size:3.5rem;
+    color:#fff;
+    text-transform:uppercase;
+}
+
+.banner .content p {
+    font-family:'Times New Roman';
+    font-size:1.5rem;
+    color:#eee;
+    padding:1rem 0;
+    line-height:1;
+}
+
+/*applying css on container(post) contents*/
+
+.container {
+    display:grid;                           /*about us align to posts alignment dividing*/
+    grid-template-columns:2.5fr 1fr;
+    gap:2.5rem;
+    background:#eee;
+}
+
+.container .posts-container .post{          
+    width:100%;
+    padding:2rem;
+    background:#fff;
+    border:var(--border);
+    border-radius:.5rem;
+    margin-bottom:1.5rem;
+}
+
+.container .posts-container .post .image{           /*posts(blogs) images fit to border size*/
+    width:100%;
+    height:40rem;
+    border-radius:.5rem;
+    object-fit:cover;
+}
+
+.container .posts-container .post .date{            /*date -> size,colour,padding to border alignments*/
+    padding-top:2rem;
+    font-size:1.5rem;
+    color:green;
+    text-align: left;
+}
+
+.container .posts-container .post .title{           /*heading to blog posts -> size,colour,padding to border alignments*/
+    padding-top:1.5rem;
+    font-size:2.5rem;
+    color:var(--chocolate);
+    text-align: left;
+}
+
+
+.container .posts-container .post .text{           /*padding to post to post and style to text*/
+    font-size:1.6rem;
+    color:var(--light-color);
+    line-height:1.7;
+    padding:1 rem 0;
+    text-align: left;
+}
+
+
+.container .posts-container .links{                /*line division to contact links and post content*/
+    border-top:var(--border);
+    margin-top:.5rem;
+    padding-top:1.5rem;
+    display:flex;
+    align-items:center;
+}
+
+.container .posts-container .links .user{           /*alignment setting -> to right:"By Admin" and to left: "comments and share"*/
+    margin-right:auto;
+    text-align: center;
+}
+
+.container .posts-container .links .icon{           /*alignment setting -> to right:"By Admin" and to left: "comments and share"*/
+    padding-right:1rem;
+    text-align: center;
+}
+
+.container .posts-container .links a{              /*apply style on the -> "By Admin" and to left: "comments and share"*/
+    font-size:1.5rem;
+    color:var(--light-color);
+    text-align: center;
+}
+
+.container .posts-container .links a i{           /*padding and colour setting -> to right:"By Admin" and to left: "comments and share"*/
+    padding-right:.2rem;
+    color:var(--black);
+    text-align: center;
+}
+
+.container .posts-container .links a:hover{      /*apply colour on the which if we place cursor colour highlights-> "By Admin" "comments and share"*/
+    color:green;
+    text-align: center;
+}
+
+.container .posts-container .links a:hover i{     /*apply colour on the which if we place cursor colour highlights-> "By Admin" "comments and share"*/
+    color:green;
+    text-align: center;
+}
+
+.container .sidebar .box{                           /*create the box on the -> "about us" content*/
+    font-size:1.5rem;
+    border:var(--border);
+    border-radius:1rem;
+    overflow:hidden;
+    background:#fff;
+    margin-bottom:1.5rem;
+    text-align: center;
+}
+
+.container .sidebar .box .title{                   /*apply styles -> "about us" content*/
+    padding:1.5rem;
+    font-size:2rem;
+    color:#fff;
+    background:olive;
+    text-transform:capitalize;
+    text-align: center;
+}
+
+.container .sidebar .box .about{                   /*apply styles -> "about us" content*/
+    text-align:center;
+    padding:1rem 1.5rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about img{              /*apply styles -> "logo of about us" */
+    height:15rem;
+    width:15rem;
+    border-radius:50%;
+    object-fit:cover;
+    margin:1rem 0;
+    text-align: center;
+}
+
+.container .sidebar .box .about h3{               /*apply styles -> "credit name" content*/
+    color:var(--black);
+    font-size:1.7rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about p{                 /*apply styles -> "proffession of credicts" content"*/
+    color:var(--light-color);
+    font-size:1.5rem;
+    line-height:1.5;
+    padding:1rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow{                   /*apply styles -> "follow(insta,fb,linkedIn)" content*/
+    padding:1rem 0;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow a{                   /*apply styles background -> "follow(insta,fb,linkedIn)" content*/
+    height:4rem;
+    line-height:4rem;
+    width:4rem;
+    border-radius:50%;
+    background:olive;
+    color:#fff;
+    font-size:1.7rem;
+    margin:0 .1rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow a:hover{                   
+    background:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .category{                        /*apply styles -> "category" content*/
+    padding:1rem 1.5rem;
+}
+
+.container .sidebar .box .category a{                   
+    padding:.4rem 0;
+    font-size:1.5rem;
+    color:var(--black);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.container .sidebar .box .category a span{                   /*apply styles on background box-> "category" content*/
+    background:var(--light-color);
+    color:#fff;
+    border-radius:.5rem;
+    padding:.5rem;
+}
+
+
+.container .sidebar .box .category a:hover{               /*apply styles in wihch when cursor pointer color highlights-> "category" topic content*/
+    color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .category a:hover span{         /*apply styles in wihch when cursor pointer color highlights-> "category" values content*/ 
+    background-color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .p-post{                       /*apply styles on -> "popular posts" content*/
+    padding:1rem 2rem;
+    text-align:left;
+}
+
+.container .sidebar .box .p-post a{                       /*apply styles on anchor -> "popular posts" content*/
+    padding:1rem 0;
+    display:block;
+}
+
+.container .sidebar .box .p-post a h3{                       /*apply styles on h3 tag-> "popular posts" content*/
+    color:var(--black);
+    font-size:1.5rem;
+    padding-bottom:1rem;
+}
+
+.container .sidebar .box .p-post a span {
+    color:var(--light-color);
+    font-size:1.5rem;
+}
+
+.container .sidebar .box .p-post a span i{
+    padding-right:.2rem;
+}
+
+.container .sidebar .box .p-post a:hover h3{
+    color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .tags {
+    padding:1rem;
+}
+
+
+.container .sidebar .box .tags a{
+    display:inline-block;
+    padding:.5rem 1.5rem;
+    font-size:1.2rem;
+    color:var(--black);
+    border-radius:.2rem;
+    border:var(--border);
+    margin:.5rem;
+}
+
+.container .sidebar .box .tags a:hover{
+    background:var(--yellowgreen);
+    color:#fff;
+}
+
+.contact {
+    /* background:url(../images/footercontact.jpeg) no-repeat;               background pic-> "contact" content */
+    /* background: url("{{ url_for('static', filename='images/footercontact.jpeg') | safe }}") no-repeat; */
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.contact form{
+    background:#fff;                                            /*style on -> "contact - form" content*/
+    box-shadow:var(--box-shadow);
+    border-radius:.5rem;
+    margin:2rem auto;
+    max-width:70rem;
+    padding:2rem;
+}
+
+.contact form h3{                                               /*style on -> "contact - form(h3 tag)" content*/
+    color:var(--black);
+    text-align: center;
+    padding-bottom: 1.5rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.contact form .inputBox{                                      /*style on -> "contact - form(input type)" content*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputBox input,                               /*style on -> "contact - form(input type - textarea attribute)" content*/
+.contact form textarea{
+    width:100%;
+    background:#eee;
+    padding:1rem;
+    margin:.7rem 0;
+    border-radius: .5rem;
+    color:var(--black);
+    font-size: 1.7rem;
+}
+
+.contact form .inputBox input{                              /*style on -> "contact - form(input type)" content*/
+    width:49%;
+}
+
+.footer{                                                    /*style on -> "contact" content*/
+    text-align: center;
+    margin-top: 0.1rem;
+}
+
+.footer .credit{                                             /*style on -> "contact(credits - created by)" content*/
+    text-transform: capitalize;
+    font-size: 1.7rem;
+    color:var(--black);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer .credit span{
+    color:green;
+}
+
+/*.footer .follow{
+    padding: 1rem 0;
+}
+
+.footer .follow a{
+    height:4.5rem;
+    line-height:4.5rem;
+    width:4.5rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    background:olive;
+    color:#fff;
+    margin:0 .1rem;
+    text-align: center;
+}
+
+.footer .follow a:hover{
+    background:var(--yellowgreen);
+}*/
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+    section {
+        padding:10px;
+    }
+    #msger{
+        padding:0px  !important;
+    }
+    .container {                         
+        grid-template-columns:2fr 1fr;
+    }
+}
+
+
+@media (max-width:768px) {
+
+    #menu-bars {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        width: 100%;
+        border-radius: 0;
+        /*"display:flex" optional use*/
+    }
+
+    .header .navbar {
+        position:absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background: #fff;
+        display:none;
+    }
+
+    .header .navbar.active{
+        display: block;
+    }
+
+
+    .header .navbar a{
+        display:block;
+        background: #f7f7f7;
+        padding: 1.5rem;
+        margin: 1.5rem;
+        border-radius:.5rem;
+        border:var(--border);
+    }
+    .container {                         
+        grid-template-columns: 1fr;
+        gap:0;
+    }
+    .container .post-container .post .image{                         
+        height:30rem;
+    }
+
+    .footer{
+        flex-flow: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{                              /*style on -> "contact - form(input type)" content*/
+    width:100%;
+}
+}
+
+
+
+/* pop-up button */
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  color: rgb(211, 0, 0);
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+}
+
+.msger {
+display: flex;
+flex-flow: column wrap;
+justify-content: space-between;
+width: 116%;
+max-width: 517px;
+/* margin: 15px 10px; */
+height: calc(100% - 10px );
+margin-top: -80px;
+background: var(--msger-bg);
+box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.msger-header {
+/* display: flex; */
+font-size: medium;
+justify-content: space-between;
+padding: 10px;
+text-align: center;
+border-bottom: var(--border);
+background: #eee;
+color: #666;
+}
+
+.msger-chat {
+flex: 1;
+overflow-y: auto;
+padding: 10px;
+}
+.msger-chat::-webkit-scrollbar {
+width: 6px;
+}
+.msger-chat::-webkit-scrollbar-track {
+background: #ddd;
+}
+.msger-chat::-webkit-scrollbar-thumb {
+background: #bdbdbd;
+}
+.msg {
+display: flex;
+align-items: flex-end;
+margin-bottom: 10px;
+}
+
+.msg-img {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+background: #ddd;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+border-radius: 20%;
+}
+.msg-bubble {
+max-width: 450px;
+padding: 15px;
+border-radius: 15px;
+background: var(--left-msg-bg);
+}
+.msg-info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+.msg-info-name {
+margin-right: 10px;
+font-weight: bold;
+color: #000 !important;
+}
+.msg-text{
+    /* font-size: 25px; */
+    color: #000 !important; 
+}
+.msg-info-time {
+font-size: 0.85em;
+color: #000 !important;
+}
+
+.left-msg .msg-bubble {
+border-bottom-left-radius: 0;
+}
+
+.right-msg {
+flex-direction: row-reverse;
+}
+.right-msg .msg-bubble {
+background: var(--right-msg-bg);
+color: #fff;
+border-bottom-right-radius: 0;
+}
+.right-msg .msg-img {
+margin: 0 0 0 10px;
+}
+
+.msger-inputarea {
+display: flex;
+padding: 10px;
+border-top: var(--border);
+background: #eee;
+}
+.msger-inputarea * {
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 1em;
+}
+.msger-input {
+flex: 1;
+background: #ddd;
+}
+.msger-send-btn {
+margin-left: 10px;
+background: rgb(0, 196, 65);
+color: #fff;
+font-weight: bold;
+cursor: pointer;
+transition: background 0.23s;
+}
+.msger-send-btn:hover {
+background: rgb(0, 180, 50);
+}
+
+.msger-chat {
+background-color: #fcfcfe;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dddddd' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+*,
+*:before,
+*:after {
+margin: 0;
+padding: 0;
+box-sizing: inherit;
+}
+
+ 
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: -100px;
+  right:50px;
+  border: -1px solid #f1f1f1;
+  z-index: 9;
+  height:500px;
+  width:385px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.msger-chat {
+  max-width: 600px; /* Set a maximum width for better centering on larger screens */
+  margin: auto; /* Center the chat area */
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: white; /* Set the background color to white */
+  border: 3px solid #f1f1f1; /* Add a border for better visibility */
+}
+
+.msger-header-close {
+      cursor: pointer;
+      float: right;
+      font-size: 20px;
+      margin-right: 2px;
+      color: blue;
+      margin-top: 7px;
+    }
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
