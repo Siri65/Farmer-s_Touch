@@ -1,0 +1,294 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey"],
+        "responses": ["Hello! How can I assist you?", "Hi there, how can I help?", "Good to see you again"]
+      },
+      {
+        "tag": "crop_selection",
+        "patterns": ["I want to grow a crop in my field.", "I have chosen a crop.", "Planning to cultivate a crop."],
+        "responses": ["Ok, did you choose the crop?", "Great! What crop have you chosen?", "Sure, let me know which crop you've selected."]
+      },
+      {
+        "tag": "crop_specific_queries",
+        "patterns": ["How deep should I plant brinjal seeds?", "Any specific pruning techniques for brinjal plants?", "What role does sunlight play in the growth of brinjal crops?", "Are there any organic methods to control aphids on brinjal plants?", "How do I recognize and treat nutrient deficiencies in brinjal plants?", "What is the average time it takes for brinjal seeds to germinate?", "Are there any alternative uses for brinjal leaves?", "What precautions should I take to avoid overwatering brinjal plants?"],
+        "responses": [
+          "Ok, what type of queries do you have related to Brinjal crop?",
+          "Sure, I can help with specific questions about growing Brinjal.",
+          "Certainly, let me assist you with information about cultivating Brinjal."
+        ]
+      },
+      {
+        "tag": "seed_depth",
+        "patterns": ["How deep should I plant brinjal seeds?"],
+        "responses": ["Plant brinjal seeds about 1/4 to 1/2 inch deep in the soil."]
+      },
+      {
+        "tag": "pruning_techniques",
+        "patterns": ["Are there any specific pruning techniques for brinjal plants?"],
+        "responses": ["Prune brinjal plants to remove damaged or crowded branches, promoting better air circulation and fruit development."]
+      },
+      {
+        "tag": "sunlight_requirements",
+        "patterns": ["What role does sunlight play in the growth of brinjal crops?"],
+        "responses": ["Brinjal plants require full sunlight for at least 6-8 hours a day for optimal growth and fruit development."]
+      },
+      {
+        "tag": "organic_pest_control",
+        "patterns": ["Are there any organic methods to control aphids on brinjal plants?"],
+        "responses": ["Introduce natural predators like ladybugs or use neem oil and soapy water spray to control aphids organically."]
+      },
+      {
+        "tag": "nutrient_deficiencies",
+        "patterns": ["How do I recognize and treat nutrient deficiencies in brinjal plants?"],
+        "responses": ["Yellowing leaves may indicate nutrient deficiencies. Adjust fertilization based on lacking nutrients – for example, add nitrogen for yellowing leaves."]
+      },
+      {
+        "tag": "germination_time",
+        "patterns": ["What is the average time it takes for brinjal seeds to germinate?"],
+        "responses": ["Brinjal seeds typically germinate within 7-14 days under optimal conditions."]
+      },
+      {
+        "tag": "alternative_uses",
+        "patterns": ["Are there any alternative uses for brinjal leaves?"],
+        "responses": ["Brinjal leaves can be used as natural mulch or compost material, contributing organic matter to the soil."]
+      },
+      {
+        "tag": "overwatering_precautions",
+        "patterns": ["What precautions should I take to avoid overwatering brinjal plants?"],
+        "responses": ["Allow the top inch of soil to dry before watering again to prevent overwatering, which can lead to root rot."]
+      },
+      {
+        "tag": "watering_frequency",
+        "patterns": ["How often should I water my brinjal plants?", "What's the watering frequency for brinjal plants?", "When should I water my brinjal crops?"],
+        "responses": ["Brinjal plants prefer regular watering, ensuring the soil remains consistently moist but not waterlogged."]
+      },
+      {
+        "tag": "soil_conditions",
+        "patterns": ["What are the ideal soil conditions for growing brinjal?", "Describe the optimal soil conditions for brinjal cultivation.", "What type of soil does brinjal thrive in?"],
+        "responses": ["Brinjals thrive in well-drained, sandy-loam soil with a pH level between 6.0 to 6.5."]
+      },
+      {
+        "tag": "soil_preparation",
+        "patterns": ["What are the recommended methods for soil preparation?", "How should I prepare the soil for brinjal cultivation?", "Tell me about soil preparation for growing brinjal."],
+        "responses": ["Before planting, ensure the soil is well-tilled, free of weeds, and enriched with organic matter like compost or well-rotted manure."]
+      },
+      {
+        "tag": "planting_time",
+        "patterns": ["What's the best time for planting brinjal?", "When should I plant brinjal crops?", "Tell me about the optimal planting time for brinjal."],
+        "responses": ["Brinjal is typically planted in late water or early spring, once the soil has warmed up."]
+      },
+      {
+        "tag": "watering_methods",
+        "patterns": ["How should I water brinjal plants?", "What are the recommended watering methods for brinjal crops?", "Tell me about the best way to water brinjal plants."],
+        "responses": ["Provide consistent watering, aiming to keep the soil evenly moist but not waterlogged. Drip irrigation or a soaker hose can help to maintain proper moisture levels."]
+      },
+      {
+        "tag": "harvest_time",
+        "patterns": ["What's the average time to harvest brinjal from planting?", "When can I expect to harvest brinjal crops?", "Tell me about the harvesting timeline for brinjal."],
+        "responses": ["Depending upon the variety, brinjal can be ready to harvest within 2-4 months after planting."]
+      },
+      {
+        "tag": "nutrient_requirements",
+        "patterns": ["What are the key nutrients brinjal plants require for healthy growth?", "Tell me about the essential nutrients for brinjal cultivation.", "Describe the nutrient requirements for growing brinjal."],
+        "responses": ["Essential nutrients for brinjal growth include nitrogen, phosphorus, and potassium, along with calcium and magnesium."]
+      },
+      {
+        "tag": "harvest_signs",
+        "patterns": ["What are the signs of brinjal fruit ready for harvest?", "How can I tell when brinjal is ready to be harvested?", "Describe the indicators of ripe brinjal fruits."],
+        "responses": ["Harvest brinjal fruits when they reach a glossy appearance and are firm to the touch."]
+      },
+      {
+        "tag": "companion_plants",
+        "patterns": ["Can you recommend companion plants for brinjal cultivation?", "Tell me about companion planting with brinjal.", "What plants are good companions for brinjal crops?"],
+        "responses": ["Marigold and basil are excellent companion plants for brinjal, helping deter pests."]
+      },
+      {
+        "tag": "soil_requirements_marigold",
+        "patterns": ["What type of soil is suitable for growing marigold crop?", "Describe the soil requirements for marigold cultivation.", "Tell me about the ideal soil for growing marigolds."],
+        "responses": ["Marigold thrives in well-drained soil with a pH between 6.0 to 7.0. Sandy-loam soil works well."]
+      },
+      {
+        "tag": "planting_time_marigold",
+        "patterns": ["When is the best time to plant marigolds?", "What's the optimal planting time for marigold seeds?", "Tell me about the recommended planting season for marigolds."],
+        "responses": ["Plant marigold seeds after the last frost date in spring for most regions."]
+      },
+      {
+        "tag": "watering_frequency_marigold",
+        "patterns": ["How often should I water marigold plants?", "What's the watering frequency for marigold crops?", "Tell me about the watering schedule for marigold."],
+        "responses": ["Water marigold regularly, allowing the soil to dry slightly between waterings."]
+      },
+      {
+        "tag": "pest_protection_marigold",
+        "patterns": ["How can I protect marigolds from pests?", "What pest protection methods are effective for marigold plants?", "Tell me about pest control for marigold crops."],
+        "responses": ["Marigolds naturally repel some pests. Still, you can use organic solutions like neem oil or companion planting to deter pests."]
+      },
+      {
+        "tag": "fertilization_marigold",
+        "patterns": ["Do marigolds require fertilization?", "How should I fertilize marigold plants?", "Tell me about the fertilization needs of marigold crops."],
+        "responses": ["Marigolds naturally don’t require heavy feeding. A balanced fertilizer applied during planting is usually sufficient."]
+      },
+      {
+        "tag": "blooming_time_marigold",
+        "patterns": ["When can I expect marigolds to bloom after planting?", "What's the blooming time frame for marigold plants?", "Tell me about the flowering period of marigold crops."],
+        "responses": ["Depending on the variety, marigolds typically start blooming about 6-8 weeks after planting."]
+      },
+      {
+        "tag": "deadheading_marigold",
+        "patterns": ["How do I deadhead marigold flowers?", "What's the proper method for deadheading marigold plants?", "Tell me about the deadheading process for marigold flowers."],
+        "responses": ["Pinch off faded or dead flowers regularly to encourage continuous blooming."]
+      },
+      {
+        "tag": "annual_or_perennial_marigold",
+        "patterns": ["Are marigolds annual or perennial plants?", "Tell me about the life cycle of marigold plants.", "Are marigolds perennials or annuals?"],
+        "responses": ["Most marigold varieties are annuals, completing their life cycle in a single growing season."]
+      },
+      {
+        "tag": "seed_collection_marigold",
+        "patterns": ["Can I save seeds from marigold flowers for the next planting season?", "How do I collect seeds from marigold plants?", "Tell me about saving seeds from marigold flowers."],
+        "responses": ["Yes, you can collect and save marigold seeds for the next planting season."]
+      },
+      {
+        "tag": "seed_storage_marigold",
+        "patterns": ["How should I store harvested marigold seeds?", "What's the proper method for storing marigold seeds?", "Tell me about storing dried marigold seeds."],
+        "responses": ["Store dried marigold seeds in a cool, dry place in an airtight container until ready for planting."]
+      },
+      {
+        "tag": "sunlight_conditions_marigold",
+        "patterns": ["What sunlight conditions do marigolds prefer?", "How much sunlight do marigold plants need?", "Tell me about the sunlight requirements for growing marigolds."],
+        "responses": ["Marigold thrives in full sun, requiring at least 6 hours of sunlight per day for optimal growth and blooming."]
+      },
+      {
+        "tag": "propagation_marigold",
+        "patterns": ["How do I propagate marigold plants?", "What are the propagation methods for marigold crops?", "Tell me about propagating marigolds."],
+        "responses": ["Marigolds can be propagated by seeds or by taking cuttings from healthy plants."]
+      },
+      {
+        "tag": "plant_spacing_marigold",
+        "patterns": ["Should I space marigold plants when planting them?", "What's the recommended spacing for marigold plants?", "Tell me about the proper distance between marigold plants."],
+        "responses": ["Yes, space marigold plants about 8-10 inches apart to allow adequate airflow and prevent overcrowding."]
+      },
+      {
+        "tag": "cold_tolerance_marigold",
+        "patterns": ["Can marigolds tolerate cold weather?", "Are marigold plants frost-resistant?", "Tell me about the cold tolerance of marigold crops."],
+        "responses": ["Marigolds are sensitive to frost and cold temperatures. It’s best to plant them after the last frost date."]
+      },
+      {
+        "tag": "beneficial_insects_marigold",
+        "patterns": ["Do marigolds attract beneficial insects?", "Are there insects attracted to marigold plants?", "Tell me about the role of marigolds in attracting beneficial insects."],
+        "responses": ["Yes, marigolds attract pollinators like bees and butterflies while repelling some harmful pests."]
+      },
+      {
+        "tag": "marigold_varieties",
+        "patterns": ["Are there different varieties of marigold?", "Tell me about the types of marigold plants.", "What are the different varieties of marigolds?"],
+        "responses": ["Yes, there are various types of marigolds, including African marigolds, French marigolds, and signet marigolds, each with its unique characteristics."]
+      },
+      {
+        "tag": "lifecycle_marigold",
+        "patterns": ["How long do marigold plants typically live?", "What is the lifecycle of marigold crops?", "Tell me about the lifespan of marigold plants."],
+        "responses": ["Marigold plants usually complete their lifecycle within one growing season as annuals."]
+      },
+      {
+        "tag": "container_cultivation_marigold",
+        "patterns": ["Can I grow marigolds in containers?", "Is container cultivation suitable for marigold plants?", "Tell me about growing marigolds in containers."],
+        "responses": ["Yes, marigolds can thrive in containers as long as they have well-drained soil and adequate sunlight."]
+      },
+      {
+        "tag": "disease_prevention_marigold",
+        "patterns": ["How do I prevent diseases in marigold plants?", "What are the disease prevention measures for marigold crops?", "Tell me about keeping marigold plants disease-free."],
+        "responses": ["Ensure proper spacing, avoid overhead watering, and provide good air circulation to prevent common diseases like powdery mildew."]
+      },
+      {
+        "tag": "companion_planting_marigold",
+        "patterns": ["Can I use marigolds for companion planting?", "Tell me about using marigolds as companion plants.", "What are the benefits of companion planting with marigolds?"],
+        "responses": ["Yes, marigolds are often used in companion planting to deter pests and enhance the growth of nearby plants, such as tomatoes and peppers."]
+      },
+      {
+        "tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "hi user"],
+        "responses": ["hi user! How can I help you?", "Hello! How can I assist you?", "Hi there! How can I help?"]
+      },
+      {
+        "tag": "fruit_crop_monitoring",
+        "patterns": ["Where can I find the fruits crop monitoring?", "How do I access fruits crop monitoring?", "Tell me about locating fruits crop monitoring."],
+        "responses": ["Go to the gardening page, there you can find the fruits crop page. Please click on the fruits page, you'll be navigated to the fruit’s webpage."]
+      },
+      {
+        "tag": "thank_you",
+        "patterns": ["Thank you", "Thanks", "Thanks for your help", "Thank you very much"],
+        "responses": ["Is there anything else that I can help you with?", "You're welcome! If you have any more questions, feel free to ask."]
+      },
+      {
+        "tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "hi user"],
+        "responses": ["hi! How can I help you?", "Hello! How can I assist you?", "Hi there! How can I help?"]
+      },
+      {
+        "tag": "crop_history_tracking",
+        "patterns": ["I'm unable to track my previous history", "Can't find my crop history", "Having trouble with crop tracking", "Unable to view my crop history"],
+        "responses": ["Can you specify the crop history that you are requesting for?", "Sure, I can assist with tracking your crop history. Could you specify the crop type?"]
+      },
+      {
+        "tag": "specific_crop_history",
+        "patterns": ["I want my flowers crop history", "Looking for history of my flower crops", "Need information on my past flower crops"],
+        "responses": ["Okay, you can go to the gardening page and click on the flowers page. On the left pane, there you can find the previous history of the crops that you had completed."]
+      },
+      {
+        "tag": "issue_resolution",
+        "patterns": ["I'm unable to track my crop properly. The data is wrong", "Facing issues with incorrect crop data", "Crop tracking problems", "Incorrect crop history"],
+        "responses": ["Sorry for the inconvenience. Please wait for a moment...", "Are there any network issues in your area?", "Please contact the administration member. Contact: farmertouch@gmail.com"]
+      },
+      {
+        "tag": "network_issues",
+        "patterns": ["No there is not issues", "No network problems", "Network is fine"],
+        "responses": ["Please contact the administration member to resolve the issues. Contact: farmertouch@gmail.com"]
+      },
+      {
+        "tag": "thank_you",
+        "patterns": ["Thank you", "Thanks", "Thanks for your help", "Thank you very much"],
+        "responses": ["Is there anything else that I can help you with?", "You're welcome! If you have any more questions, feel free to ask."]
+      },
+      {
+        "tag": "login_profile_issue",
+        "patterns": ["I'm having issue with my login profile", "Login profile problems", "Unable to access my account"],
+        "responses": ["Please kindly contact the admin of this page: Contact: 8888899999, mail id: farmer'stouch@gmail.com"]
+      },
+      {
+        "tag": "no_issues_thank_you",
+        "patterns": ["No, thank you", "No more issues", "I'm good now"],
+        "responses": ["Is there anything else that I can help you with?", "Thank you! If you need further assistance, don't hesitate to reach out."]
+      },
+      {
+        "tag": "crop_history_not_found",
+        "patterns": ["my data of my crop was not found", "crop history not available", "unable to find my crop data", "missing crop history"],
+        "responses": ["Can you specify the crop history that you are requesting for?", "I can assist you better if you specify the crop type you're looking for."]
+      },
+      {
+        "tag": "all_crop_history_gone",
+        "patterns": ["all the crop history was gone", "lost all crop history", "missing all previous crop data", "no crop history found"],
+        "responses": ["Please kindly contact the admin of this page: Contact: 8888899999, mail id: farmer'stouch@gmail.com"]
+      },
+      {
+        "tag": "thank_you",
+        "patterns": ["Thank you", "Thanks", "Thanks for your help", "Thank you very much"],
+        "responses": ["Is there anything else that I can help you with?", "You're welcome! If you have any more questions, feel free to ask."]
+      },
+      {
+        "tag": "change_phone_number",
+        "patterns": ["I want to change my phone number", "Changing phone number", "Update phone number"],
+        "responses": ["Sorry for the inconvenience, please wait for a moment...", "If you want to change the phone number, you can create a new account. If you want to change the phone number and want to keep the existing profile, please kindly contact the admin of this page: Contact: 8888899999, mail id: farmer'stouch@gmail.com. Please reach out to the admin to resolve the issues."]
+      },
+      {
+        "tag": "no_issues_thank_you",
+        "patterns": ["No, thank you", "No more issues", "I'm good now"],
+        "responses": ["Is there anything else that I can help you with?", "Thank you! If you need further assistance, don't hesitate to reach out."]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["No, thank you", "I'm good for now", "No more questions"],
+        "responses": ["Thanks for using help. If you have any further inquiries, don't hesitate to contact me."]
+      }
+    ]
+  }
+  
