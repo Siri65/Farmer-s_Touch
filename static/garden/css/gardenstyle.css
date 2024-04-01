@@ -1,0 +1,416 @@
+:root {
+  --yellowgreen: #9acd32;
+  --chocolate: #7b3f00;
+  --black: #333;
+  --light-color: #777;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+html {
+  font-size: 70%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+body {
+  background: #00007515;
+}
+
+section {
+  padding: 1rem 5%;
+  min-height: 51vh;
+}
+
+.btn {
+  display: inline-block;
+  background: rgb(9, 81, 9);
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #7b4000f3;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent; /*header alignment */
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1%;
+}
+
+.header .logo {
+  font-size: 85%; /*"touch" heading colour alignment*/
+  color: #fff;
+  font-family: "Times New Roman";
+  font-size: 3rem;
+  margin-right: auto;
+}
+
+.header .logo span {
+  font-size: 95%;
+  font-family: "Times New Roman"; /*"farmer" heading colour alignment*/
+  color: limegreen;
+  font-size: 3.5rem;
+}
+
+.header .navbar a {
+  font-family: "Times New Roman";
+  color: #fff; /*navigated bars alignment*/
+  margin-right: 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.header .navbar a:hover {
+  color: var(--yellowgreen); /*anvigated bars bacjground colour setting*/
+}
+
+.header .icons i {
+  height: 4.5rem;
+  line-height: 4.5rem; /*icons alignment and colour setting*/
+  width: 4.5rem;
+  text-align: center;
+  color: black;
+  background: #eee;
+  border-radius: 50%;
+  margin-left: 0.7rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.header .icons i:hover {
+  color: #fff; /*icons background colour*/
+  background: #7b400080;
+}
+
+.header .search-form {
+  position: absolute; /*seacrhbox tab creation*/
+  background: #fff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  top: 110%;
+  right: 7%;
+  height: 6rem;
+  width: 50rem;
+  padding: 1rem;
+  display: none; /*to hide the search box not to display on the screen directly*/
+}
+
+.header .search-form.active {
+  display: flex;
+}
+
+.header .search-form #search-box {
+  width: 100%; /*searchbox tab display*/
+  border: var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: black;
+  height: 100%;
+}
+
+.header .search-form label {
+  font-size: 1.4rem; /*magnifier size*/
+  padding-left: 1rem; /*maginifier movements*/
+  padding-right: 0.5rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .search-form label:hover {
+  color: var(--yellowgreen);
+}
+
+#menu-bars {
+  display: none;
+}
+
+.banner {
+  min-height: 100vh;
+  background: url(../images/gardening.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  padding-top: 8rem;
+}
+
+.banner .content {
+  text-align: center;
+  background: #5b565173;
+  border-radius: 0.1rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  max-width: 50rem;
+}
+
+.banner .content h3 {
+  font-family: "Times New Roman";
+  font-size: 3.5rem;
+  color: #fffafa;
+  text-transform: uppercase;
+}
+
+.banner .content p {
+  font-family: "Times New Roman";
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 1rem 0;
+  line-height: 1;
+}
+
+.gardenn {
+  background: #eee;
+}
+
+.gardenn .logo {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  color: #7b3f00;
+  text-transform: capitalize;
+}
+
+.gardenn .logo span {
+  color: #6d8f27;
+  text-transform: capitalize;
+}
+
+.gardenn .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.gardenn .box-container .box {
+  border: 0.1rem solid #222;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.gardenn .box-container .box:hover .image img {
+  transform: scale(1.1);
+}
+
+.gardenn .box-container .box .image {
+  height: 25rem;
+  overflow: hidden;
+}
+
+.gardenn .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
+}
+
+.gardenn .box-container .box .content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.gardenn .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.gardenn .box-container .box .content p {
+  font-size: 1.5rem;
+  color: var(--light-black);
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+.gardenn .load-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact {
+  background: url(../images/footer.jpg) no-repeat; /*background pic-> "contact" content*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contact .logo {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contact .row form {
+  flex: 1 1 55rem;
+  background: #fff;
+  padding: 0 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(207, 194, 194, 0.856);
+  border-radius: 0.5rem;
+}
+
+.contact .row form .box {
+  width: 100%;
+  border-bottom: 0.1rem solid #333;
+  color: #333;
+  text-transform: none;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+.contact .row form textarea {
+  width: 100%;
+  border-bottom: 0.1rem solid #333;
+  color: #333;
+  text-transform: none;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.contact .row form .box:focus {
+  border-color: var(--main-color);
+}
+.contact .row form textarea:focus {
+  border-color: var(--main-color);
+}
+
+.contact .row form .box::placeholder {
+  text-transform: capitalize;
+}
+.contact .row form textarea::placeholder {
+  text-transform: capitalize;
+}
+
+.contact .row form textarea {
+  height: 20rem;
+  resize: none;
+}
+
+.contact .row form .btn {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 2rem;
+  font-size: 2rem;
+  padding: 2.5rem;
+  text-align: center;
+  color: #666;
+  background: #fff;
+}
+
+footer span {
+  font-family: "Times New Roman", Times, serif;
+  color: #2828af;
+}
+
+/*media queries*/
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  footer {
+    flex-flow: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-bars {
+    display: inline-block;
+  }
+
+  .header .search-form {
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: var(--border);
+    width: 100%;
+    border-radius: 0;
+    /*"display:flex" optional use*/
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background: #fff;
+    display: none;
+  }
+
+  .header .navbar.active {
+    display: block;
+  }
+
+  .header .navbar a {
+    display: block;
+    background: #f7f7f7;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    border-radius: 0.5rem;
+    border: var(--border);
+  }
+
+  .footer {
+    flex-flow: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .contact form .inputBox input {
+    /*style on -> "contact - form(input type)" content*/
+    width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
