@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grocery Shopping</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <i class="fa fa-shopping-basket"></i>Grocery
+            </a>
+
+            <nav class="navbar">
+                <a href="bloghtml.html">Home</a>
+                <a href="garden.html">Garden</a>
+                <a href="#features">Features</a>
+                <a href="#products">Products</a>
+                <a href="#categories">Categories</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fa fa-bars" id="menu-btn"></div>
+                <div class="fa fa-search" id="search-btn"></div>
+                <div class="fa fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa fa-user" id="login-btn"></div>  
+            </div>
+
+            <form class="search-form">
+                <input type="search" id="search-box" placeholder="Search here...">
+                <label for="search-box" class="fa fa-search"></label>
+            </form>
+
+            <div class="shopping-cart" id="cart">
+                <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="images/cart-img-1.png">
+                    <div class="content">
+                        <h3>Watermelon</h3>
+                        <span class="price">$5.99</span>
+                        <span class="quantity">Qty: 1</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="images/cart-img-2.png">
+                    <div class="content">
+                        <h3>Onions</h3>
+                        <span class="price">$4.56</span>
+                        <span class="quantity">Qty: 2</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fa fa-trash"></i>
+                    <img src="images/cart-img-4.png">
+                    <div class="content">
+                        <h3>Lilies</h3>
+                        <span class="price">$9.32</span>
+                        <span class="quantity">Qty: 7</span>
+                    </div>
+                </div>
+
+                <div class="total">Total: $19.87</div>
+                <a href="#" class="btn">Check Out</a>    
+            </div>
+
+            <form  class="login-form">
+                <h3> Login Now</h3>
+                <input type="email" placeholder="your email id" class="box">
+                <input type="password" placeholder="your password" class="box">
+                <p> Forget Password? <a href="#">Click Here...</a></p>
+                <p> Don't have an account? <a href="#">Sign Up...</a></p>
+                <input type="submit" value="Login" class="btn">
+            </form>
+        </header>
+        <!--Content starts-->
+        <section class="home" id="#home">
+            <div class="content">
+                <h3>Fresh and <span>Organic</span> Products for You...</h3>
+                <p> Indulge in nature's bounty with our fresh and organic selection, carefully curated to invigorate your senses and 
+                    support sustainable living. From farm to table, embrace wholesome goodness that's environmentally conscious.
+                </p>
+                <a href="#features" class="btn">Shop Now</a>
+            </div>
+        </section>
+        <!--features starts-->
+        <section class="features" id="features">
+            <h1 class="heading">Our <span>Features</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/feature-img-1.png">
+                    <h3>Fresh and Organic</h3>
+                    <p>Experience the vibrant flavors of pure, organic goodness, delivered fresh to your doorstep for a healthier, happier you.</p>
+                    <a href="fruits.html" class="btn">Explore More...</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/feature-img-2.png">
+                    <h3>Free Delivery</h3>
+                    <p>Enjoy the convenience of free delivery straight to your door, making healthy, organic living effortlessly accessible.</p>
+                    <a href="#" class="btn">Explore More...</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/feature-img-3.png">
+                    <h3>Blossom Bouquets</h3>
+                    <p>
+                        Brighten any occasion with our exquisite blossoms, fusion of colors and fragrances straight from nature's garden.</p>
+                    <a href="flower.html" class="btn">Explore More...</a>
+                </div>
+            </div>
+        </section>
+        
+        <!--products starts-->
+        <section class="products" id="products">
+            <h1 class="heading">Our<span>Products</span></h1>
+            <div class="swiper product-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <img src="images/product-13.png">
+                        <h1> Natural Tulips</h1>
+                        <div class="price">$18.99 - $23.43</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                            <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-1.png">
+                        <h1> Fresh Oranges</h1>
+                        <div class="price">$11.99 - $16.83</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-2.png">
+                        <h1> Fresh Onions</h1>
+                        <div class="price">$4.99 - $10.37</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-3.png">
+                        <h1> Natural Roses</h1>
+                        <div class="price">$7.38 - $14.43</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-4.png">
+                        <h1> Fresh Cabbage</h1>
+                        <div class="price">$5.23 - $8.36</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-11.png">
+                        <h1> Natural Lillies</h1>
+                        <div class="price">$11.73 - $16.65</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-5.png">
+                        <h1> Fresh Potatoes</h1>
+                        <div class="price">$4.99 - $7.48</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-6.png">
+                        <h1> Fresh Avacodo</h1>
+                        <div class="price">$9.52 - $16.23</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-9.png">
+                        <h1> Natural Chrysanthemum</h1>
+                        <div class="price">$11.99 - $17.42</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-8.png">
+                        <h1> Natural Lime</h1>
+                        <div class="price">$3.99 - $5.78</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-7.png">
+                        <h1> Fresh Carrots</h1>
+                        <div class="price">$5.38 - $8.43</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-10.png">
+                        <h1> Natural Jasmines</h1>
+                        <div class="price">$15.38 - $19.99</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/product-12.png">
+                        <h1> Fresh Watermelon</h1>
+                        <div class="price">$8.28 - $13.87</div>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half"></i></div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--Categories starts-->
+        <section class="categories" id="categories">
+            <h1 class="heading">Product <span>Categories</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/cat-1.png">
+                    <h3>Vegetables</h3>
+                    <p>Upto 45% off</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/cat-2.png">
+                    <h3>Fruits</h3>
+                    <p>Upto 50% off</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/cat-4.png">
+                    <h3>Flowers</h3>
+                    <p>Upto 30% off</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+
+                <div class="box">
+                    <img src="images/cat-3.png">
+                    <h3>Diary Products</h3>
+                    <p>Upto 45% off</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+        <!--Footer starts-->
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Farmer's Touch <i class="fa fa-shopping-basket"></i></h3>
+                    <p> Feel free to follow us on our social media handlers all the links are given below.</p>
+                    <div class="share">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="#" class="links"><i class="fa fa-phone"></i>+91 8784959843</a>
+                    <a href="#" class="links"><i class="fa fa-phone"></i>+91 6300898324</a>
+                    <a href="#" class="links"><i class="fa fa-envelope"></i>farmertouch@gmail.com</a>
+                    <a href="#" class="links"><i class="fa fa-map-marker"></i>AndhraPradesh, India</a>
+                </div>
+
+                <div class="box">
+                    <h3>Quick Links</h3>
+                    <a href="bloghtml.html" class="links"><i class="fa fa-arrow-right"></i>Home</a>
+                    <a href="garden.html" class="links"><i class="fa fa-arrow-right"></i>Garden</a>
+                    <a href="#features" class="links"><i class="fa fa-arrow-right"></i>Features</a>
+                    <a href="#products" class="links"><i class="fa fa-arrow-right"></i>Prodcuts</a>
+                    <a href="#categories" class="links"><i class="fa fa-arrow-right"></i>Categories</a>
+                </div>
+
+                <div class="box">
+                    <h3>News Letters</h3>
+                    <p>Subscribe for latest updates...</p>
+                    <input type="email" placeholder="email id" class="email">
+                    <input type="submit" value="Subscribe" class="btn">
+                    <img src="images/payment.png" class="payment-id">
+                </div>
+            </div>
+
+            <div class="credit">Created by <span>Admins</span>| All Rights Reserved!</div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
