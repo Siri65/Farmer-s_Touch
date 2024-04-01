@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/*Global styling starts*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color:#444;
+    background: #00000010;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/*services styling starts*/
+section{
+    margin:50px 0;
+    padding:0 0 30px 0;
+}
+
+.heading{
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.heading h2{
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform:initial;
+    color: #222;
+}
+
+.heading h2::before,
+.heading h2::after{
+    content: "";
+    background: #1dbf73;
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+}
+
+.heading h2::before{        /*for styling like -- content -- */
+    margin:0 15px 10px 0;
+}
+
+::after{
+    margin: 0 0 10px 15px;
+}
+
+.heading p{
+    font-size: 20px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.row .icon_box{
+    position:relative;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px 0 rgba(68, 88, 144, 0.5);
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.row .icon_box::before{
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -40px;
+    width:100px;
+    height: 100px;
+    border-radius: 50px;
+    background: rgb(124, 31, 31);
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.row .one::before{
+    background: #70ce88;
+}
+.row .two::before{
+    background: #70ce88;
+}
+.row .three::before{
+    background: #70ce88;
+}
+.row .four::before{
+    background: #70ce88;
+}
+.row .five::before{
+    background: #70ce88;
+}
+.row .six::before{
+    background: #70ce88;
+}
+
+.row .icon_box:hover::before{
+    right: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.row .icon{
+    margin: 0 auto 20px auto;
+    padding-top: 10px;
+    display: inline-block;
+    text-align:center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.row .one .icon{
+    background: #70ce88;
+}
+.row .two .icon{
+    background: #70ce88;
+}
+.row .three .icon{
+    background: #70ce88;
+}
+.row .four .icon{
+    background: #70ce88;
+}
+.row .five .icon{
+    background: #70ce88;
+}
+.row .six .icon{
+    background: #70ce88;
+}
+
+.row .icon i{
+    font-size: 30px;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.row .icon_box:hover .icon{
+    background: #fff;
+}
+
+
+.row .icon_box:hover.one .icon i{
+    color: #70ce88;
+}
+.row .icon_box:hover.two .icon i{
+    color: #70ce88;
+}
+.row .icon_box:hover.three .icon i{
+    color: #70ce88;
+}
+.row .icon_box:hover.four .icon i{
+    color: #70ce88;
+}
+.row .icon_box:hover.five .icon i{
+    color: #70ce88;
+}
+.row .icon_box:hover.six .icon i{
+    color: #70ce88;
+}
+
+
+
+.row .title{
+    font-size: 30px;
+    color: #262424e6;
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.row .descrip{
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+    transition: 0.5s ease-in-out;
+} 
+
+.row .icon_box:hover .title,
+.row .icon_box:hover .descrip{
+    color: #fff;
+}
+/*services styling ends*/
+/*Global styling ends*/
+
+
