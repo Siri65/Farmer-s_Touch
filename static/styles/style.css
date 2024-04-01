@@ -1,0 +1,618 @@
+﻿:root{
+    --yellowgreen:#9ACD32;
+    --chocolate:#7B3F00;
+    --black:#333;
+    --light-color:#777;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+section {
+    padding:2rem 7%;
+}
+
+.btn{
+    display: inline-block;
+    background: rgb(9, 117, 9);
+    margin-top: 1rem;
+    color:#fff;
+    font-size: 1.7rem;
+    padding:1rem 3rem;
+    cursor: pointer;
+ }
+
+.btn:hover {
+    background:yellowgreen;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;                           /*header alignment */
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 7%;
+}
+
+.header .logo{
+    font-size: 85%;                         /*"touch" heading colour alignment*/
+    color:var(--chocolate);         
+    font-family: 'Times New Roman';
+    font-size: 3.0rem;
+    margin-right: auto;
+}
+
+.header .logo span{
+    font-size: 95%;
+    font-family: 'Times New Roman';         /*"farmer" heading colour alignment*/
+    color:limegreen;
+    font-size: 3.5rem;
+}
+
+.header .avatar{
+	position:fixed;
+	width:8rem;
+	height:7rem;
+	border-radius:50%;
+}
+
+
+.header .navbar a{
+    font-family: 'Times New Roman';
+    color:var(--light-color);           /*navigated bars alignment*/
+    margin-right:2rem;
+    font-size:1.7rem;
+    text-transform: capitalize;
+}
+
+.header .navbar a:hover{
+    color:var(--yellowgreen);           /*anvigated bars bacjground colour setting*/
+}
+
+.header .icons i{
+    height:4.5rem;
+    line-height:4.5rem;                 /*icons alignment and colour setting*/
+    width:4.5rem;
+    text-align:center;
+    color:black;
+    background:#eee;
+    border-radius:50%;
+    margin-left:.7rem;
+    font-size:1.7rem;
+    cursor:pointer;
+}
+.header .icons h6{
+    height:4.5rem;
+    line-height:4.5rem;                 /*icons alignment and colour setting*/
+    width:4.5rem;
+    text-align:center;
+    color:black;
+    border-radius:100%;
+    margin-left:.5rem;
+    font-size:3rem;
+    cursor:pointer;
+}
+
+.header .icons i:hover{
+    color:#fff;             /*icons background colour*/
+    background:rgb(35, 83, 35);
+}
+.header .icons h6:hover{
+    color:#fff;             /*icons background colour*/
+    background:rgb(35, 83, 35);
+}
+
+.header .search-form{
+    position:absolute;          /*seacrhbox tab creation*/
+    background:#fff;
+    border-radius:.5rem;
+    display:flex;
+    align-items:center;
+    box-shadow:var(--box-shadow);
+    top:110%;
+    right:7%;
+    height:6rem;
+    width:50rem;
+    padding:1rem;
+    display:none;          /*to hide the search box not to display on the screen directly*/
+}
+
+.header .search-form.active{
+    display:flex;
+ }
+
+.header .search-form #search-box{
+    width:100%;                 /*searchbox tab display*/
+    border:var(--border);
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.5rem;
+    color:black;
+    height:100%;
+}
+
+.header .search-form label{
+    font-size: 1.5rem;     /*magnifier size*/
+    padding-left:1rem;     /*maginifier movements*/
+    padding-right:.5rem;
+    cursor:pointer;
+    color:var(--black);
+}
+
+.header .search-form label:hover{
+    color:var(--yellowgreen);
+}
+
+#menu-bars{
+    display: none;
+}
+
+
+.banner {
+    min-height:100vh;
+    /* background: url(../main/images/mainbackground.jpg) no-repeat; */
+    background: url("{{ url_for('static', filename='main/images/mainbackground.jpg') | safe }}") no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:grid;
+    place-items:center;
+    padding-top:8rem;
+}
+
+.banner .content{
+    text-align:center;
+    background:transparent;
+    border-radius:.5rem;
+    box-shadow:var(--box-shadow);
+    padding:2rem;
+    max-width:50rem;
+}
+
+.banner .content h3 {
+    font-family:'Times New Roman';
+    font-size:3.5rem;
+    color:#fff;
+    text-transform:uppercase;
+}
+
+.banner .content p {
+    font-family:'Times New Roman';
+    font-size:1.5rem;
+    color:#eee;
+    padding:1rem 0;
+    line-height:1;
+}
+
+/*applying css on container(post) contents*/
+
+.container {
+    display:grid;                           /*about us align to posts alignment dividing*/
+    grid-template-columns:2.5fr 1fr;
+    gap:2.5rem;
+    background:#eee;
+}
+
+.container .posts-container .post{          
+    width:100%;
+    padding:2rem;
+    background:#fff;
+    border:var(--border);
+    border-radius:.5rem;
+    margin-bottom:1.5rem;
+}
+
+.container .posts-container .post .image{           /*posts(blogs) images fit to border size*/
+    width:100%;
+    height:40rem;
+    border-radius:.5rem;
+    object-fit:cover;
+}
+
+.container .posts-container .post .date{            /*date -> size,colour,padding to border alignments*/
+    padding-top:2rem;
+    font-size:1.5rem;
+    color:green;
+    text-align: left;
+}
+
+.container .posts-container .post .title{           /*heading to blog posts -> size,colour,padding to border alignments*/
+    padding-top:1.5rem;
+    font-size:2.5rem;
+    color:var(--chocolate);
+    text-align: left;
+}
+
+
+.container .posts-container .post .text{           /*padding to post to post and style to text*/
+    font-size:1.6rem;
+    color:var(--light-color);
+    line-height:1.7;
+    padding:1 rem 0;
+    text-align: left;
+}
+
+
+.container .posts-container .links{                /*line division to contact links and post content*/
+    border-top:var(--border);
+    margin-top:.5rem;
+    padding-top:1.5rem;
+    display:flex;
+    align-items:center;
+}
+
+.container .posts-container .links .user{           /*alignment setting -> to right:"By Admin" and to left: "comments and share"*/
+    margin-right:auto;
+    text-align: center;
+}
+
+.container .posts-container .links .icon{           /*alignment setting -> to right:"By Admin" and to left: "comments and share"*/
+    padding-right:1rem;
+    text-align: center;
+}
+
+.container .posts-container .links a{              /*apply style on the -> "By Admin" and to left: "comments and share"*/
+    font-size:1.5rem;
+    color:var(--light-color);
+    text-align: center;
+}
+
+.container .posts-container .links a i{           /*padding and colour setting -> to right:"By Admin" and to left: "comments and share"*/
+    padding-right:.2rem;
+    color:var(--black);
+    text-align: center;
+}
+
+.container .posts-container .links a:hover{      /*apply colour on the which if we place cursor colour highlights-> "By Admin" "comments and share"*/
+    color:green;
+    text-align: center;
+}
+
+.container .posts-container .links a:hover i{     /*apply colour on the which if we place cursor colour highlights-> "By Admin" "comments and share"*/
+    color:green;
+    text-align: center;
+}
+
+.container .sidebar .box{                           /*create the box on the -> "about us" content*/
+    font-size:1.5rem;
+    border:var(--border);
+    border-radius:1rem;
+    overflow:hidden;
+    background:#fff;
+    margin-bottom:1.5rem;
+    text-align: center;
+}
+
+.container .sidebar .box .title{                   /*apply styles -> "about us" content*/
+    padding:1.5rem;
+    font-size:2rem;
+    color:#fff;
+    background:olive;
+    text-transform:capitalize;
+    text-align: center;
+}
+
+.container .sidebar .box .about{                   /*apply styles -> "about us" content*/
+    text-align:center;
+    padding:1rem 1.5rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about img{              /*apply styles -> "logo of about us" */
+    height:15rem;
+    width:15rem;
+    border-radius:50%;
+    object-fit:cover;
+    margin:1rem 0;
+    text-align: center;
+}
+
+.container .sidebar .box .about h3{               /*apply styles -> "credit name" content*/
+    color:var(--black);
+    font-size:1.7rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about p{                 /*apply styles -> "proffession of credicts" content"*/
+    color:var(--light-color);
+    font-size:1.5rem;
+    line-height:1.5;
+    padding:1rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow{                   /*apply styles -> "follow(insta,fb,linkedIn)" content*/
+    padding:1rem 0;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow a{                   /*apply styles background -> "follow(insta,fb,linkedIn)" content*/
+    height:4rem;
+    line-height:4rem;
+    width:4rem;
+    border-radius:50%;
+    background:olive;
+    color:#fff;
+    font-size:1.7rem;
+    margin:0 .1rem;
+    text-align: center;
+}
+
+.container .sidebar .box .about .follow a:hover{                   
+    background:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .category{                        /*apply styles -> "category" content*/
+    padding:1rem 1.5rem;
+}
+
+.container .sidebar .box .category a{                   
+    padding:.4rem 0;
+    font-size:1.5rem;
+    color:var(--black);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.container .sidebar .box .category a span{                   /*apply styles on background box-> "category" content*/
+    background:var(--light-color);
+    color:#fff;
+    border-radius:.5rem;
+    padding:.5rem;
+}
+
+
+.container .sidebar .box .category a:hover{               /*apply styles in wihch when cursor pointer color highlights-> "category" topic content*/
+    color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .category a:hover span{         /*apply styles in wihch when cursor pointer color highlights-> "category" values content*/ 
+    background-color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .p-post{                       /*apply styles on -> "popular posts" content*/
+    padding:1rem 2rem;
+    text-align:left;
+}
+
+.container .sidebar .box .p-post a{                       /*apply styles on anchor -> "popular posts" content*/
+    padding:1rem 0;
+    display:block;
+}
+
+.container .sidebar .box .p-post a h3{                       /*apply styles on h3 tag-> "popular posts" content*/
+    color:var(--black);
+    font-size:1.5rem;
+    padding-bottom:1rem;
+}
+
+.container .sidebar .box .p-post a span {
+    color:var(--light-color);
+    font-size:1.5rem;
+}
+
+.container .sidebar .box .p-post a span i{
+    padding-right:.2rem;
+}
+
+.container .sidebar .box .p-post a:hover h3{
+    color:var(--yellowgreen);
+}
+
+
+.container .sidebar .box .tags {
+    padding:1rem;
+}
+
+
+.container .sidebar .box .tags a{
+    display:inline-block;
+    padding:.5rem 1.5rem;
+    font-size:1.2rem;
+    color:var(--black);
+    border-radius:.2rem;
+    border:var(--border);
+    margin:.5rem;
+}
+
+.container .sidebar .box .tags a:hover{
+    background:var(--yellowgreen);
+    color:#fff;
+}
+
+.contact {
+    /* background: url("{{ url_for('static', filename='images/footercontact.jpeg') | safe }}") no-repeat; */
+    /* background: url(../main/images/footercontact.jpeg) no-repeat; */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact form{
+    background:#fff;                                            /*style on -> "contact - form" content*/
+    box-shadow:var(--box-shadow);
+    border-radius:.5rem;
+    margin:2rem auto;
+    max-width:70rem;
+    padding:2rem;
+}
+
+.contact form h3{                                               /*style on -> "contact - form(h3 tag)" content*/
+    color:var(--black);
+    text-align: center;
+    padding-bottom: 1.5rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.contact form .inputBox{                                      /*style on -> "contact - form(input type)" content*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputBox input,                               /*style on -> "contact - form(input type - textarea attribute)" content*/
+.contact form textarea{
+    width:100%;
+    background:#eee;
+    padding:1rem;
+    margin:.7rem 0;
+    border-radius: .5rem;
+    color:var(--black);
+    font-size: 1.7rem;
+}
+
+.contact form .inputBox input{                              /*style on -> "contact - form(input type)" content*/
+    width:49%;
+}
+
+.footer{                                                    /*style on -> "contact" content*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+}
+
+.footer .credit{                                             /*style on -> "contact(credits - created by)" content*/
+    text-transform: capitalize;
+    font-size: 1.7rem;
+    color:var(--black);
+    padding: 1rem 0;
+}
+
+.footer .credit span{
+    color:green;
+}
+
+.footer .follow{
+    padding: 1rem 0;
+}
+
+.footer .follow a{
+    height:4.5rem;
+    line-height:4.5rem;
+    width:4.5rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    background:olive;
+    color:#fff;
+    margin:0 .1rem;
+    text-align: center;
+}
+
+.footer .follow a:hover{
+    background:var(--yellowgreen);
+}
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+    section {
+        padding:2rem;
+    }
+    .container {                         
+        grid-template-columns:2fr 1fr;
+    }
+}
+
+
+@media (max-width:768px) {
+
+    #menu-bars {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        width: 100%;
+        border-radius: 0;
+        /*"display:flex" optional use*/
+    }
+
+    .header .navbar {
+        position:absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background: #fff;
+        display:none;
+    }
+
+    .header .navbar.active{
+        display: block;
+    }
+
+
+    .header .navbar a{
+        display:block;
+        background: #f7f7f7;
+        padding: 1.5rem;
+        margin: 1.5rem;
+        border-radius:.5rem;
+        border:var(--border);
+    }
+    .container {                         
+        grid-template-columns: 1fr;
+        gap:0;
+    }
+    .container .post-container .post .image{                         
+        height:30rem;
+    }
+
+    .footer{
+        flex-flow: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .inputBox input{                              /*style on -> "contact - form(input type)" content*/
+    width:100%;
+}
+}
