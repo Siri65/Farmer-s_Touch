@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog website</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- css file link -->
+    <!-- <link rel="stylesheet" href="garden/css/gardenstyle.css"> -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='garden/css/gardenstyle.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- header starting -->
+    <header class="header" style="top:30px;">
+      <!-- blog-name on the website -->
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" class="logo"><span>Gardener's </span>Dream</a>
+
+      <!-- Navigation links -->
+      <nav class="navbar" style="margin-left: 60px; top:2px;">
+        <a href="{{ url_for('orderPage') }}">Orders</a>
+        <a href="{{ url_for('fruits') }}">Fruits</a>
+        <a href="{{ url_for('flower') }}">Flowers</a>
+        <a href="{{ url_for('veg') }}">Vegetables</a>
+        <a href="{{ url_for('bloghtml') }}">Home</a>
+      </nav>
+
+      <!-- div tag starting -->
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <!-- :(menu) symbol creation -->
+        <i class="fas fa-search" id="search-icon" style="margin-right: 20rem;"></i>
+        <div id="google_element" style="top:20px;right:4rem; position: absolute;"></div>
+        <!-- searching symbol creation -->
+      </div>
+
+      <!-- form for searching content starting -->
+      <form action="" class="search-form">
+        <input
+          type="search"
+          name=" "
+          placeholder="Search the content here..."
+          id="search-box"
+        />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
+    </header>
+    <!-- header ends -->
+
+    <!-- main page content(banner) starts -->
+    <section class="banner" id="banner">
+      <div class="content" id="content">
+        <h3>Explore fun in Harvesting</h3>
+        <p>
+          We must give more in order to get more.It is the generous giving of
+          ourselves that produces the generous harvest.
+        </p>
+        <a href="#gardenn" class="btn">Explore for More...</a>
+      </div>
+    </section>
+    <br /><br />
+    <!-- main page content(banner) ends -->
+
+    <!-- gardening posts starts-->
+
+    <!-- fruits files starts-->
+    <section class="gardenn" id="gardenn">
+      <h1 class="logo"><span> Fruit </span> Shack</h1>
+      <br />
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/imag1.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/imag1.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Soil Fertility</h3>
+            <p>
+              Soil pH around 6.0 to 7.5, slightly acidic, is optimal for fruit
+              trees to absorb nutrients. There are certain soil conditions that
+              are detrimental to the health of fruit trees.
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/imag2.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/imag2.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Seedling</h3>
+            <p>
+              A fruit is the ripened ovary, while a seed is a ripened ovule,
+              containing the embryo to sustain it through the process of
+              germination and the early development of the seedling
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/imag3.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/imag3.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Plant Sapling</h3>
+            <p>
+              Fruits mature more slowly than vegetables, but some grow quicker
+              than others. It can produce fruit in the first year. The skin of a
+              fruit may be thin, tough, or hard.
+            </p>
+            <a href="book.php" class="btn">Dive In...</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="load-more">
+        <a href="{{ url_for('fruits') }}" class="btn">Load More...</a>
+      </div>
+    </section>
+    <!-- fruits files ends-->
+
+    <!-- Flowers files starts-->
+    <section class="gardenn" id="gardenn">
+      <h1 class="logo"><span> Botanic </span> Bay</h1>
+      <br />
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/ig1.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/ig1.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Soil Fertility</h3>
+            <p>
+              It's best to use it wherever you need soil in a garden, like in
+              raised beds, an outdoor container, vegetable plots, flower
+              gardens, or around rose bushes and ornamental shrubs.
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/ig2.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/ig2.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Seedling</h3>
+            <p>
+              Once pollen gets to the ovary within the flower, the ovary
+              develops into a fruit. The ovules inside the ovary develop into
+              seeds inside of this fruit.
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <img
+              src="{{ url_for('static', filename='garden/images/ig3.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Plant Sapling</h3>
+            <p>
+              Saplings are young trees with a diameter of 1 to 5 inches at a
+              point that is 4½ feet from the ground. Saplings may be balled and
+              burlapped, bareroot, or containerized.
+            </p>
+            <a href="book.php" class="btn">Dive In...</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="load-more">
+        <a href="{{ url_for('flower') }}" class="btn">Load More...</a>
+      </div>
+    </section>
+    <!-- flowers posts ends -->
+
+    <!-- veg posts starts -->
+    <section class="gardenn" id="gardenn">
+      <h1 class="logo"><span> Crazy </span> Veggies</h1>
+      <br />
+      <div class="box-container">
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/img1.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/img1.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Soil Fertility</h3>
+            <p>
+              The most common recommendations are for nitrogen and phosphorus.
+              Excessive amounts of nitrogen can reduce production and quality,
+              and increase insect and disease problems.
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/img2.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/img2.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Seedling</h3>
+            <p>
+              Both Sears and Johnston recommend starting with crops that are
+              easy to grow and fast-yielding to help grow confidence in your
+              gardening abilities
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="image">
+            <!-- <img src="garden/images/img3.jpg" alt="reload"> -->
+            <img
+              src="{{ url_for('static', filename='garden/images/img3.jpg') }}"
+              alt="reload"
+            />
+          </div>
+          <div class="content">
+            <h3>Plant Sapling</h3>
+            <p>
+              Choosing a location, gardening planning, soil preparation, seed
+              and plant selection, planting and cultivating plants until they
+              are ready for harvest.
+            </p>
+            <a href="#" class="btn">Dive In...</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="load-more">
+        <a href="{{ url_for('veg') }}" class="btn">Load More...</a>
+      </div>
+    </section>
+    <br />
+    <!-- veg posts ends -->
+    <!-- gardening posts ends -->
+
+    <!--Contact details starts-->
+    <section class="contact" id="contact">
+      <br /><br />
+      <h1 class="logo">Contact Us</h1>
+      <div class="row">
+        <form action="">
+          <input type="text" placeholder="name" class="box" />
+          <input type="email" placeholder="email" class="box" />
+          <input type="number" placeholder="number" class="box" />
+          <textarea
+            name=""
+            placeholder="message"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input type="submit" class="btn" value="send message" />
+        </form>
+      </div>
+    </section>
+    <!--Contact details ends-->
+
+    <!--Footer details starts-->
+    <footer>created by <span>Admins </span> | all rights reserved!</footer>
+    <!--Footer details ends-->
+
+    <!--javascript  file link  -->
+    <!-- <script src="garden/js/gardenscript.js"></script> -->
+    <script src="{{ url_for('static', filename='garden/js/gardenscript.js') }}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"> </script>
+    <script>
+       function loadGoogleTranslate()
+                {
+                   new google.translate.TranslateElement("google_element")
+                }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog website</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- css file link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='new/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='new/bootstrap.css') }}">
+
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    line-height: inherit;
+    }
+    body{
+        background-color: #e3e3e3 !important;
+    }
+    ul,
+    li {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0 !important;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    .full-body{
+        padding: 30px;
+        height: 90vh;
+    }
+
+    .full-body
+    /* <!-- profile-section styles starts --> */
+
+    .profile{
+        display: flex;
+        display: block;
+        width: 100%;
+    }
+    .prf{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .profile .profile-left .bg-clr{
+        position: relative;
+    }
+    .profile .profile-left .bg-clr:before{
+        background-color: rgb(255, 0, 255);
+        position: absolute;
+        content: '';
+        left: 0px;
+        top: 0px;
+        width: 10px;
+        height: 25px;
+        border-radius: 3px;
+    }
+    .profile .profile-left h4{
+        margin-left: 20px !important;
+        font-weight: 600;
+    }
+    .profile .profile-right .download{
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        background-color: white;
+        border-radius: 5px;
+        
+    }
+    .profile .profile-right .download h6{
+        margin-left: 10px;
+    }
+
+    /* <!-- profile-section styles ends --> */
+
+
+    /* second section (section2) styles */
+    .section2{
+        padding: 20px 0;
+    }
+    .image-padding{
+        background-color: white;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px 20px;
+
+
+    }
+    .image-section{
+        padding: 20px 30px;
+    }
+    .image-content h6{
+        padding: 10px 0 15px 0;
+    }
+    .image-padding .image-content{
+        padding: 10px 20px;
+    }
+    .image-section img{
+        border-radius:10px;
+    }
+    .image-padding p{
+        text-align: justify;
+    }
+    .image-list .list{
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid #e3e3e3;
+        padding-top: 20px;
+    }
+    .image-list .list li{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        /* padding: 10px 20px; */
+    }
+    .image-list .list li .fa{
+        padding-right: 5px;
+    }
+
+    .top-content{
+        border: 1px solid #e3e3e3;
+        padding: 20px 20px;
+    }
+    .image-padding ,
+    .image-right-content{
+        height: 90vh;
+    }
+    .middle-content,
+    .buttons-section
+    {
+        padding: 20px 20px;
+    }
+    .top-content h5{
+        color: rgb(255, 0, 255);
+        font-weight: 700;
+    }
+    .image-right-content{
+        background-color: white;
+        border-radius: 10px;
+        display: grid;
+        align-items: baseline;
+        align-content: space-between;
+    }
+    .above-content h6{
+        font-weight: 600;
+        color: rgb(255, 0, 255);
+    }
+    .above-content h5{
+        padding: 10px 0;
+        font-weight: 600;
+    }
+    .mt-5{
+        margin-top: 50px;
+    }
+    .buttons-section{
+        display: flex !important;
+        justify-content: flex-end;
+    }
+    .buttons-section .btn1,
+    .btn2{
+        display: flex !important;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: rgb(255, 0, 255);
+        display: inline-block;
+        margin: 0 10px;
+        border-radius: 10px;
+        color: white;
+    }
+    .buttons-section .btn2{
+        background-color: green;
+    }
+    .buttons-section .btn1 .fa,
+    .buttons-section .btn2 .fa
+    {
+        padding-right: 10px;
+        color: white;
+    }
+    .box1{
+        display: grid;
+        align-items: baseline;
+        align-content: space-between;
+    }
+
+    ::-webkit-scrollbar{
+        width: 0%;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- header starting -->
+    <header class=" header" style="margin-top: 30px; background-color: transparent;">
+
+        <!-- blog-name on the website -->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="logo"><span>Farmer's </span>Touch</a>
+        <!-- <img src="main/images/webpagelogo.jpeg" alt="" class="avatar">   -->
+        <img src="{{ url_for('static', filename='main/images/webpagelogo1.png') }}" alt="" class="avatar" style="gap:10px">
+                              
+
+
+        <!-- Navigation links -->
+        <nav class="navbar" style="color: black;">
+            <a href="{{ url_for('garden') }}" style="color: black;">Gardening</a>
+            <a href="#posts" style="color: black;">My Posts</a>
+            <a href="#contact" style="color: black;">Contact Us</a>
+            <a href="{{ url_for('login') }}" style="color: black;">Login</a>
+        </nav>
+
+        <!-- div tag starting -->
+        <div class="icons" style="display: flex;justify-content: center;align-items: center;">
+            <i class="fas fa-bars" id="menu-bars"></i>         <!-- :(menu) symbol creation   -->
+            <i class="fas fa-search fa-2x" id="search-icon" style="margin-right: 10px;"></i>      <!-- searching symbol creation -->
+            <div id="google_element"></div>
+            <!--<h6 class='fas fa-user-circle' id="user-icon" style='font-size: 32px;'></h6>      user symbol creation -->
+        </div>
+
+        <!-- form for searching content starting -->
+        <form action="" class="search-form">
+            <input type="search" name=" " placeholder="Search the content here..." id="search-box" >
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </header>
+    <!-- header ends -->
+
+    <!-- main page content(banner) starts -->
+    <section class="banner" id="banner" style="background: url('{{ url_for('static', filename='main/images/mainbackground.jpg') | safe }}') no-repeat center center; background-size: cover;">
+
+        <div class="content">
+            <h3>Explore fun in Harvesting</h3>
+            <p>We must give more in order to get more.It is the generous giving of ourselves that produces the generous harvest.</p>
+            <a href="#posts" class="btn">My blogs</a>
+        </div>
+    </section>
+    <!-- main page content(banner) ends -->
+    
+    <!-- posts content(container) starts -->
+    <section class="container" id="posts">
+
+        <div class="posts-container">
+            <div class="post">
+
+                <!-- <img src="main/images/imgpost1.jpg" alt="Reload" class="image">         first blog img -->
+                <img src="{{ url_for('static', filename='main/images/imgpost1.jpg') }}" alt="Reload" class="image">
+                <div class="date">
+                    <i class="far fa-clock"></i>
+                    <span>11 November,2022</span>
+                </div><br />
+
+                <h3 class="title">Smart Farming</h3><br />
+
+                <p class="text"> Smart Farming is focused on the use of data acquired through various sources (historical, geographical, and instrumental) 
+                    in the management of farm activities.echnologically advanced doesn’t essentially mean that it is a smart system. 
+                    Smart agriculture technologies diffe`1  rentiate themselves through their ability to record the data and make sense of it.
+                    Smart farming employs hardware (IoT) and software (Software as a Service or SaaS) to capture the data and give actionable 
+                    insights to manage all the operations on the farm, both pre-and post-harvest.The data is organized, accessible all the time, 
+                    and full of data on every aspect of finance and field operations that can be monitored from anywhere in the world. 
+                </p><br />
+
+                <div class="links">
+
+                    <a href="#" class="user">
+                        <i class="far fa-user"></i>
+                        <span>By Admin</span>
+                    </a>
+
+                    <a href="#" class="icon">
+                        <i class="far fa-comment"></i>
+                        <span>(45)</span>
+                    </a>
+
+                     <a href="#" class="icon">
+                        <i class="far fa-share-square"></i>
+                        <span>(29)</span>
+                    </a>
+                </div>
+
+            </div>  <br /><br />
+
+            <div class="post">
+
+                <!-- <img src="main/images/imgpost2.jpg" alt="Reload" class="image">         second blog img -->
+                <img src="{{ url_for('static', filename='main/images/imgpost2.jpg') }}" alt="Reload" class="image">
+                <div class="date">
+                    <i class="far fa-clock"></i>
+                    <span>4 December,2022</span>
+                </div><br />
+
+                <h3 class="title">Traditional Farming</h3><br />
+
+                <p class="text"> Traditional agriculture is based on treating the soil and plants with products that are more likely 
+                     than not noxious, and more likely than not synthetically produced in a laboratory.These products 
+                     are used to prevent disease or pests from blighting the plant.dd to this the problems of soil degradation, 
+                     transportation of food to regions where it can't be grown locally, and the pollution caused by fertilizers 
+                     and pesticides, and we have a genuine crisis on our hands.there are two divisions of agriculture, 
+                     subsistence and commercial, which roughly correspond to the less developed and more developed regions.
+                </p><br />
+
+                <div class="links">
+
+                    <a href="#" class="user">
+                        <i class="far fa-user"></i>
+                        <span>By Admin</span>
+                    </a>
+
+                    <a href="#" class="icon">
+                        <i class="far fa-comment"></i>
+                        <span>(65)</span>
+                    </a>
+
+                     <a href="#" class="icon">
+                        <i class="far fa-share-square"></i>
+                        <span>(112)</span>
+                    </a>
+
+
+                </div>
+
+            </div><br /><br />
+
+        
+            <div class="post">
+
+                <!-- <img src="main/images/imgpost3.jpg" alt="Reload" class="image">         third blog img -->
+                <img src="{{ url_for('static', filename='main/images/imgpost3.jpg') }}" alt="Reload" class="image">
+                <div class="date">
+                    <i class="far fa-clock"></i>
+                    <span>21 December,2022</span>
+                </div><br />
+
+                <h3 class="title">Pesticides</h3><br />
+
+                <p class="text"> Pesticides are used to protect crops against insects, weeds, fungi and other pests. Pesticides are potentially toxic to 
+                     humans and can have both acute and chronic health effects, depending on the quantity and ways in which a person is exposed.
+                     Many of the older, less costly (off-patent) pesticides, such as dichlorodiphenyltrichloroethane (DDT) and lindane, can 
+                     remain for years in soil and water. These chemicals have been banned by countries which signed the 2001 Stockholm Convention, 
+                    an international treaty that aims to eliminate or restrict the production and use of persistent organic pollutants.
+                    <br /><br />
+                    World Health Organization(WHO) has two objectives in relation to pesticides:<br /><br />
+
+                    1.To ban the pesticides that are most toxic to humans, as well as pesticides that remain for longest time in environment.<br />
+                    2.To protect public health by setting maximum limits for pesticide residues in food and water.
+                </p><br />
+
+                <div class="links">
+
+                    <a href="#" class="user">
+                        <i class="far fa-user"></i>
+                        <span>By Admin</span>
+                    </a>
+
+                    <a href="#" class="icon">
+                        <i class="far fa-comment"></i>
+                        <span>(59)</span>
+                    </a>
+
+                     <a href="#" class="icon">
+                        <i class="far fa-share-square"></i>
+                        <span>(90)</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="sidebar">                                                   <!-- about us content details -->
+            <div class="box">
+                <h3 class="title">About Us</h3>
+                <div class="about">
+                   <!-- <img src="main/images/aboutus.jpeg" alt="Reload"> -->
+                   <img src="{{ url_for('static', filename='main/images/aboutus.jpeg') }}" alt="Reload">
+
+                   <h3>Student Project</h3>
+
+                    <p>This is an inspired project from our communities and society problems which gives a virtual guidances to the customers 
+                        for having a track and get appropriate info about crops and their growth. 
+                    </p>
+                    
+                    <div class="follow">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Categories content starts -->
+            <div class="box">
+                <h3 class="title">Categories</h3>
+                <div class="category">
+                    <a href="#"> Tools <span>42</span></a>
+                    <a href="#"> Medicines <span>75</span> </a>
+                    <a href="#"> Machinery <span>22</span> </a>
+                    <a href="#"> Seasonal Crops <span>17</span> </a>
+                    <a href="#"> Fruits <span>48</span> </a>
+                    <a href="#"> Harvesting <span>99</span> </a>
+                    <a href="#"> Experts Suggestions <span>59</span> </a>
+                    <a href="#"> Damage Remedies <span>12</span> </a>
+                    <a href="#"> Technologies <span>32</span> </a>
+                    <a href="#"> Samplings<span>18</span> </a>
+                </div>
+            </div>
+            <!-- Categories content ends -->
+
+            <!-- Categories content starts -->
+            <div class="box">
+
+                <h3 class="title">Popular Posts</h3>
+                <div class="p-post">
+
+                    <a href="#">
+                        <h3>01.Traditional Farming</h3>
+                        <span><i class="far fa-clock"></i>11 November,2022</span> 
+                    </a>
+
+                    <a href="#">
+                        <h3>02.Smart Farming</h3>
+                        <span><i class="far fa-clock"></i>26 December,2022</span> 
+                    </a>
+
+                    <a href="#">
+                        <h3>03.Pesticides</h3>
+                        <span><i class="far fa-clock"></i>04 December,2022</span> 
+                    </a>
+
+                    <a href="#">
+                        <h3>04.Tools</h3>
+                        <span><i class="far fa-clock"></i>21 December,2022</span> 
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="title">Popular Tags</h3>
+
+                <div class="tags">
+                    <a href="#">farming</a>
+                    <a href="#">farm</a>
+                    <a href="#">kisan</a>
+                    <a href="#">tools</a>
+                    <a href="#">crops</a>
+                    <a href="#">agro</a>
+                    <a href="#">medicines</a>
+                    <a href="#">experts</a>
+                    <a href="#">harvest</a>
+                    <a href="#">technologies</a>
+                    <a href="#">pesticides</a>
+                    <a href="#">samplings</a>
+                    <a href="#">gardening</a>
+                    <a href="#">traditionalfarm</a>
+                    <a href="#">smartfarm</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- posts content(container) ends -->
+
+    <!-- contact info starts -->
+    <!-- <section class="contact" id="contact"> -->
+    <section class="contact" id="contact" style="background: url('{{ url_for('static', filename='main/images/footercontact.jpeg') | safe }}') no-repeat; background-size: cover; background-position: center;">
+
+    <form action="/contact" method="post">
+        <h3>Contact Us</h3>
+        <div class="inputBox">
+            <input id="username" name="username" type="text" placeholder="User Name">
+            <input id="email" name="email" type="email" placeholder="abc@gmail.com">
+        </div>
+        <div class="inputBox">
+            <input id="number" name="number" type="number" placeholder="Mobile Number">
+            <input id="subject" name="subject" type="text" placeholder="Subject">
+        </div>
+        <textarea name="msg" placeholder="Message" id="msg" cols="30" rows="10"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+    </section>
+    <!-- contact info ends -->
+
+    <!-- footer start--> 
+    <section class="footer">
+
+    <!--<div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>-->
+
+    <div class="credit">Created By <span>Admins</span> | all rights reserved</div>
+
+    </section>
+
+    <!-- footer ends -->
+
+<!--Chatbot code-->
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <p class="open-button" ><i onclick="openForm()" class="fas fa-comment" style="font-size:48px;color:rgba(65, 236, 13, 0.819)"></i></p>
+
+<div class="chat-popup" id="myForm">
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+  <!-- partial:index.partial.html -->
+  <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+        <!-- <i class="fas fa-bug"></i> Chatbot <i class="fas fa-bug"></i> -->
+      </div>
+      <span class="msger-header-close" onclick="closeForm()">&#10006;</span>
+    </header>
+
+    <main class="msger-chat">
+      <div class="msg left-msg">
+        <div class="msg-img" style="background-image: url(C:/Users/saira/Downloads/chatbot.png)"></div>
+        <!-- <div class="msg-img" style="background-image: url({{ url_for('static', filename='chatbot.png') }})"></div> -->
+
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">Chatbot</div>
+            <div class="msg-info-time">12:45</div>
+          </div>
+
+          <div class="msg-text">
+            Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+      <button type="submit" class="msger-send-btn">Send</button>
+    </form>
+  </section>
+  <!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+    const BOT_NAME = "    ChatBot";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+
+      });
+
+    }
+
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+    //google
+    function loadGoogleTranslate()
+        {
+            new google.translate.TranslateElement("google_element")
+        }
+
+
+  </script>
+  
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+
+    <!--javascript  file link  -->
+    <script src="{{ url_for('static', filename='new/main/js/script.js') }}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"> </script>
+
+
+
+
+</body>
+</html>

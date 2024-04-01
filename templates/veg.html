@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>home</title>
+
+      <!-- swiper css link  -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+      <!-- custom css file link  -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='fruit/frstyle.css') }}">
+
+      
+
+   </head>
+   <body>
+   
+      <!-- header section starts  -->
+
+      <section class="header">
+
+         <a href="veg.html" class="logo">Crazy Veggies</a>
+
+         <nav class="navbar" style="margin-right: 100px; top:2px;">
+            <a href="{{ url_for('fruits') }}">Fruits</a>
+            <a href="{{ url_for('flower') }}">Flowers</a>
+            <a href="{{ url_for('garden') }}">Gardening</a>
+            <div id="google_element" style="top:20px; right:4rem; position: absolute;"></div>
+         </nav>
+
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+      </section>
+
+      <!-- header section ends -->
+
+      <!-- home section starts  -->
+
+      <section class="home">
+         <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+
+               <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide1.jpg') | safe }}') no-repeat">
+                  <div class="content">
+                     <span>A time to harvest,connect & share!</span>
+                     <h4>Eat Good Feel Good!</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide2.jpg') | safe }}') no-repeat">
+                  <div class="content">
+                     <span>A time to harvest,connect & share!</span>
+                     <h4>Bring Home fresh & Organic</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide3.jpg') | safe }}') no-repeat">
+                  <div class="content">
+                     <span>A time to harvest,connect & share!</span>
+                     <h4>Grow Big... Eat Big!</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide4.jpg') | safe }}') no-repeat">
+                  <div class="content">
+                     <span>A time to harvest,connect & share!</span>
+                     <h4>Happiness is the harvest of a quiet eye!</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+            
+               <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide5.jpg') | safe }}') no-repeat">
+                    <div class="content">
+                        <span>A time to harvest,connect & share!</span>
+                        <h4>Grow Veggies... Make your health HapPea!</h4>
+                        <a href="#" class="btn">Discover More</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background:url('{{ url_for('static', filename='veg/images/homeslide6.jpg') | safe }}') no-repeat">
+                    <div class="content">
+                    <span>A time to harvest,connect & share!</span>
+                    <h4>Sow, grow & let your veggies show!</h4>
+                    <a href="#" class="btn">Discover More</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+         </div>
+
+      </section>
+
+      <!-- home section ends -->
+
+      <!-- fruits section starts  -->
+
+      <section class="packages">
+      <h1 class="heading-title">Top Searches...</h1>
+         <div class="box-container">
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img12.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img12.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Marketing</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('frumark') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <!-- <img src="veg/images/img1.jpg" alt="reload"> -->
+                    <img src="{{ url_for('static', filename='veg/images/img1.jpg') }}" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Soil Fertility</h3>
+                    <p>The most common recommendations are for nitrogen and phosphorus. Excessive amounts of nitrogen 
+                        can reduce production and quality, and increase insect and disease problems.</p>
+                    <a href="{{ url_for('vegsoil') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+       
+            <div class="box">
+                <div class="image">
+                    <!-- <img src="veg/images/img2.jpg" alt="reload"> -->
+                    <img src="{{ url_for('static', filename='veg/images/img2.jpg') }}" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Seedling</h3>
+                    <p>Both Sears and Johnston recommend starting with crops that are easy to grow and fast-yielding to 
+                        help grow confidence in your gardening abilities</p>
+                    <a href="{{ url_for('vegseed') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+                   
+            <div class="box">
+                <div class="image">
+                    <!-- <img src="veg/images/img3.jpg" alt="reload"> -->
+                    <img src="{{ url_for('static', filename='veg/images/img3.jpg') }}" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Plant Sapling</h3>
+                    <p>Choosing a location, gardening planning, soil preparation, seed and plant selection, planting and 
+                        cultivating plants until they are ready for harvest.</p>
+                    <a href="{{ url_for('vegsap') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+      
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img4.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img4.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Pests</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                     in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('vegpests') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img6.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img6.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>fertilizers</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('vegfert') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img8.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img8.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Organic Methods</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('vegorg') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img10.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img10.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Irrigation</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('vegirri') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <!-- <img src="veg/images/img11.jpg" alt="reload"> -->
+                  <img src="{{ url_for('static', filename='veg/images/img11.jpg') }}" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>By-Product Utilization</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('vegprod') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="load-more"><span class="btn">Load More...</span></div>
+
+      </section>
+      <!-- fruits section ends -->
+
+      <!-- footer section starts -->
+      <footer>
+         created by <span> Admins</span> | all rights reserved!
+      </footer>
+      <!-- footer section ends -->
+
+      <!-- swiper js link  -->
+         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+      <!-- custom js file link  -->
+         <!-- <script src="fruit/js/frscript.js"></script> -->
+         <script src="{{ url_for('static', filename='fruit/js/frscript.js') }}"></script>
+         <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"> </script>
+         <script>
+            function loadGoogleTranslate()
+                     {
+                        new google.translate.TranslateElement("google_element")
+                     }
+         </script>
+
+   </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='login/css/loginstyle.css') }}"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signin-signup">
+        <form action="/login" class="sign-in-form" method="post">
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              name="Username"
+              id="Username"
+              type="text"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              name="Password"
+              id="Password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <input type="submit" value="Login" class="btn" />
+          <p class="social-text">Or Sign In with social platform</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="account-text">
+            Don't have an account? <a href="#" id="sign-up-btn2">Sign Up</a>
+          </p>
+          <br />
+          {% if messageL %}
+          <p class="errorMessage">{{ messageL }}</p>
+          {% endif %}
+        </form>
+        <form action="/signup" class="sign-up-form" method="post">
+          <h2 class="title">Sign Up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              name="Username"
+              id="Username"
+              type="text"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input
+              name="Email"
+              id="Email"
+              type="text"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              name="Password"
+              id="Password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-map-marked-alt"></i>
+            <input
+              name="Location"
+              id="Location"
+              type="text"
+              placeholder="Location"
+              required
+            />
+          </div>
+          <input type="submit" value="Sign up" class="btn" />
+          <p class="social-text">Or Sign Up with social platform</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="account-text">
+            Already have an account? <a href="#" id="sign-in-btn2">Sign In</a>
+          </p>
+          <br />
+          {% if messageS %}
+            <script>
+              document.getElementById('sign-up-btn').click()
+            </script>
+            <p class="errorMessage">{{ messageS }}</p>
+          {% endif %}
+        </form>
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Welcome Back!</h3>
+            <p>
+              To Keep Connected With Us Please Login With Your Personal Info...
+            </p>
+            <button class="btn" id="sign-in-btn">Sign In</button>
+          </div>
+          <!-- <img src="login/signin.svg" alt="Something went wrong. Try again!" class="image"> -->
+          <img
+            src="{{ url_for('static', filename='login/signin.svg') }}"
+            alt="Something went wrong. Try again!"
+            class="image"
+          />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Hello, User</h3>
+            <p>
+              Enter Your Personal Details & Start your Journey With Farmers
+              Touch!
+            </p>
+            <button class="btn" id="sign-up-btn">Sign up</button>
+          </div>
+          <!-- <img src="login/signup.svg" alt="Something went wrong. Try again!" class="image"> -->
+          <img
+            src="{{ url_for('static', filename='login/signup.svg') }}"
+            alt="Something went wrong. Try again!"
+            class="image"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- <script src="login/js/logscript.js"></script> -->
+    <script src="{{ url_for('static', filename='login/js/logscript.js') }}"></script>
+  </body>
+</html>

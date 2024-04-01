@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='popup/popup.css') }}"
+    />
+    <script
+      defer
+      src="{{ url_for('static', filename='popup/script.js') }}"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="popup" id="popup">
+        <img
+          src="{{ url_for('static', filename='popup/image/check.png') }}"
+          alt=""
+        />
+        <h2>Thank You!</h2>
+        <p>
+          Your order has been successfully placed.<br />Thanks! Continue your
+          shopping...
+        </p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>home</title>
+
+      <!-- swiper css link  -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+      <!-- custom css file link  -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='fruit/frstyle.css') }}">
+
+
+   </head>
+   <body>
+   
+      <!-- header section starts  -->
+
+      <section class="header">
+
+         <a href="{{ url_for('fruits') }}" class="logo">Botanic Bay</a>
+
+         <nav class="navbar" style="margin-right: 100px; top:2px;">
+            <a href="{{ url_for('veg') }}">Vegetables</a>
+            <a href="{{ url_for('fruits') }}">Fruits</a>
+            <a href="{{ url_for('garden') }}">Gardening</a>
+            <div id="google_element" style="top:20px; right:4rem; position: absolute;"></div>
+         </nav>
+
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+      </section>
+
+      <!-- header section ends -->
+
+      <!-- home section starts  -->
+
+      <section class="home">
+
+         <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+               <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide1.jpg) no-repeat">
+                  <div class="content">
+                     <span>Live Simply, Bloom Wildly.../</span>
+                     <h4>Bloom wherever you're planted...!</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide2.jpg) no-repeat">
+                  <div class="content">
+                     <span>Live Simply, Bloom Wildly...</span>
+                     <h4>We're all Golden sunflowers Inside!</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide3.jpg) no-repeat">
+                  <div class="content">
+                     <span>Live Simply, Bloom Wildly...</span>
+                     <h4>Grow your garden that fills with fragrance...</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide4.jpg) no-repeat">
+                  <div class="content">
+                     <span>Live Simply, Bloom Wildly...</span>
+                     <h4>Sometimes, you need a strong wind to fly higher...</h4>
+                     <a href="#" class="btn">Discover More</a>
+                  </div>
+               </div>
+
+               <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide5.jpg) no-repeat">
+                <div class="content">
+                   <span>Live Simply, Bloom Wildly...</span>
+                   <h4>Every flower blooms in its own time...</h4>
+                   <a href="#" class="btn">Discover More</a>
+                </div>
+             </div>
+
+             <div class="swiper-slide slide" style="background:url(static/flowers/images/homeslide6.jpg) no-repeat">
+                <div class="content">
+                   <span>Live Simply, Bloom Wildly...</span>
+                   <h4>Let you soul represents the white daisy...</h4>
+                   <a href="#" class="btn">Discover More</a>
+                </div>
+             </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+         </div>
+
+      </section>
+
+      <!-- home section ends -->
+
+      <!-- fruits section starts  -->
+
+      <section class="packages">
+      <h1 class="heading-title">Top Searches...</h1>
+         <div class="box-container">
+
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig12.jpg" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Marketing</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('frumark') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="static/flowers/images/ig1.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Soil Fertility</h3>
+                    <p>It's best to use it wherever you need soil in a garden, like in raised beds, an outdoor container, 
+                        vegetable plots, flower gardens, or around rose bushes and ornamental shrubs.</p>
+                    <a href="{{ url_for('flosoil') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+       
+            <div class="box">
+                <div class="image">
+                    <img src="static/flowers/images/ig2.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Seedling</h3>
+                    <p>Once pollen gets to the ovary within the flower, the ovary develops into a fruit. The ovules inside 
+                        the ovary develop into seeds inside of this fruit.</p>
+                    <a href="{{ url_for('floseed') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+                   
+            <div class="box">
+                <div class="image">
+                    <img src="static/flowers/images/ig3.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Plant Sapling</h3>
+                    <p>Saplings are young trees with a diameter of 1 to 5 inches at a point that is 4½ feet from the ground. 
+                        Saplings may be balled and burlapped, bareroot, or containerized.</p>
+                    <a href="{{ url_for('flosap') }}" class="btn">Dive In...</a>
+                </div>
+            </div>
+      
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig4.jpg" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Pests</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                     in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="#" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig6.jpg" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>fertilizers</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('flofert') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig8.jpg" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>Organic Methods</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('floorg') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig10.jpg" alt=reload">
+               </div>
+               <div class="content">
+                  <h3>Irrigation</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('floirri') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+            <div class="box">
+               <div class="image">
+                  <img src="static/flowers/images/ig11.jpg" alt="reload">
+               </div>
+               <div class="content">
+                  <h3>By-Product Utilization</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                  in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="{{ url_for('floprod') }}" class="btn">Dive In...</a>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="load-more"><span class="btn">Load More...</span></div>
+
+      </section>
+      <!-- fruits section ends -->
+
+      <!-- footer section starts -->
+      <footer>
+         created by <span> Admins</span> | all rights reserved!
+      </footer>
+      <!-- footer section ends -->
+
+      <!-- swiper js link  -->
+         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+      <!-- custom js file link  -->
+         <script src="static/fruit/js/frscript.js"></script>
+         <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"> </script>
+         <script>
+            function loadGoogleTranslate()
+                     {
+                        new google.translate.TranslateElement("google_element")
+                     }
+         </script>
+   </body>
+</html>

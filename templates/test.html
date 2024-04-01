@@ -1,0 +1,580 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  !--background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: -51px;
+  right: 15px;
+  border: -1px solid #f1f1f1;
+  z-index: 9;
+  height:483px;
+  width:385px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.msger-chat {
+  max-width: 600px; /* Set a maximum width for better centering on larger screens */
+  margin: auto; /* Center the chat area */
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: white; /* Set the background color to white */
+  border: 3px solid #f1f1f1; /* Add a border for better visibility */
+}
+
+.msger-header-close {
+      cursor: pointer;
+      float: right;
+      font-size: 20px;
+      margin-right: 2px;
+      color: blue;
+      margin-top: 7px;
+    }
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+  <!-- <meta charset="UTF-8">
+  <title>Chatbot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <p class="open-button" ><i onclick="openForm()" class="fas fa-comment" style="font-size:48px;color:red"></i></p>
+<div class="chat-popup" id="myForm">
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+  <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+      </div>
+      <span class="msger-header-close" onclick="closeForm()">&#10006;</span>
+    </header>
+    <main class="msger-chat">
+      <div class="msg left-msg">
+        <div class="msg-img" style="background-image: url(C:/Users/saira/Downloads/chatbot.png)"></div>
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">Chatbot</div>
+            <div class="msg-info-time">12:45</div>
+          </div>
+          <div class="msg-text">
+            Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+          </div>
+        </div>
+      </div>
+    </main>
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+      <button type="submit" class="msger-send-btn">Send</button>
+    </form>
+  </section>
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+    const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+    const BOT_NAME = "    ChatBot";
+    const PERSON_NAME = "You";
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+    function appendMessage(name, img, side, text) {
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+    function botResponse(rawText) {
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+      });
+    }
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+  </script>  
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/css/gardenstyle.css">
+</head>
+<body>
+    <header class="header">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="logo"><span>Gardener's </span>Dream</a>                        
+        <nav class="navbar">
+            <a href="fruits.html">Fruits</a>
+            <a href="flower.html">Flowers</a>
+            <a href="veg.html">Vegetables</a>
+            <a href="bloghtml.html">Home</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>        
+            <i class="fas fa-search" id="search-icon"></i>      
+        <form action="" class="search-form">
+            <input type="search" name=" " placeholder="Search the content here..." id="search-box" >
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </header>
+    <section class="banner" id="banner">
+
+        <div class="content" id="content">
+            <h3>Explore fun in Harvesting</h3>
+            <p>We must give more in order to get more.It is the generous giving of ourselves that produces the generous harvest.</p>
+            <a href="#gardenn" class="btn">Explore for More...</a>
+        </div>
+    </section>
+    <br><br>
+    <section class="gardenn" id="gardenn">
+        <h1 class="logo"> <span> Fruit </span> Shack </h1><br>
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag1.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Soil Fertility</h3>
+                    <p>Soil pH around 6.0 to 7.5, slightly acidic, is optimal for fruit trees to absorb nutrients. 
+                        There are certain soil conditions that are detrimental to the health of fruit trees.</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>
+       
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag2.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Seedling</h3>
+                    <p>A fruit is the ripened ovary, while a seed is a ripened ovule, containing the embryo 
+                    to sustain it through the process of germination and the early development of the seedling</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>       
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag3.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Plant Sapling</h3>
+                    <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                        in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                    <a href="book.php" class="btn">Dive In...</a>
+                </div>
+            </div>
+        </div>
+        <div class="load-more"> <a href="fruits.html" class="btn">Load More...</a> </div>
+    </section>
+    <section class="gardenn" id="gardenn">
+        <h1 class="logo"> <span> Botanic </span> Bay </h1><br>
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/ig1.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Soil Fertility</h3>
+                    <p>It's best to use it wherever you need soil in a garden, like in raised beds, an outdoor container, 
+                        vegetable plots, flower gardens, or around rose bushes and ornamental shrubs.</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/ig2.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Seedling</h3>
+                    <p>Once pollen gets to the ovary within the flower, the ovary develops into a fruit. The ovules inside 
+                        the ovary develop into seeds inside of this fruit.</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>   
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/ig3.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Plant Sapling</h3>
+                    <p>Saplings are young trees with a diameter of 1 to 5 inches at a point that is 4½ feet from the ground. 
+                        Saplings may be balled and burlapped, bareroot, or containerized.</p>
+                    <a href="book.php" class="btn">Dive In...</a>
+                </div>
+            </div>
+        </div>
+        <div class="load-more"> <a href="flower.html" class="btn">Load More...</a> </div>
+    </section>
+    <section class="gardenn" id="gardenn">
+        <h1 class="logo"> <span> Crazy </span> Veggies</h1><br>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/img1.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Soil Fertility</h3>
+                    <p>The most common recommendations are for nitrogen and phosphorus. Excessive amounts of nitrogen 
+                        can reduce production and quality, and increase insect and disease problems.</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/img2.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Seedling</h3>
+                    <p>Both Sears and Johnston recommend starting with crops that are easy to grow and fast-yielding to 
+                        help grow confidence in your gardening abilities</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>                  
+            <div class="box">
+                <div class="image">
+                    <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/img3.jpg" alt="reload">
+                </div>
+                <div class="content">
+                    <h3>Plant Sapling</h3>
+                    <p>Choosing a location, gardening planning, soil preparation, seed and plant selection, planting and 
+                        cultivating plants until they are ready for harvest.</p>
+                    <a href="#" class="btn">Dive In...</a>
+                </div>
+            </div>
+        </div>
+        <div class="load-more"> <a href="veg.html" class="btn">Load More...</a> </div>
+    </section><br>
+        <section class="contact" id="contact"><br><br>
+            <h1 class="logo"> Contact Us</h1>   
+                <div class="row">
+                    <form action="">
+                        <input type="text" placeholder="name" class="box">
+                        <input type="email" placeholder="email" class="box">
+                        <input type="number" placeholder="number" class="box">
+                        <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>  
+                        <input type="submit" class="btn" value="send message">                 
+                    </form>
+                </div>
+            </section>
+            <footer>
+                created by <span>Admins </span> | all rights reserved!
+            </footer>
+    <script src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/js/gardenscript.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/css/gardenstyle.css">
+</head>
+
+<body>
+    <header class="header">
+         <!-- blog-name on the website -->
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="#" class="logo"><span>Gardener's </span>Dream</a>                        
+ 
+         <!-- Navigation links -->
+         <nav class="navbar">
+             <a href="fruits.html">Fruits</a>
+             <a href="flower.html">Flowers</a>
+             <a href="veg.html">Vegetables</a>
+             <a href="bloghtml.html">Home</a>
+         </nav>
+ 
+         <!-- div tag starting -->
+         <div class="icons">
+             <i class="fas fa-bars" id="menu-bars"></i>          <!-- :(menu) symbol creation -->   
+             <i class="fas fa-search" id="search-icon"></i>      <!-- searching symbol creation -->
+         </div>
+ 
+         <!-- form for searching content starting -->
+         <form action="" class="search-form">
+             <input type="search" name=" " placeholder="Search the content here..." id="search-box" >
+             <label for="search-box" class="fas fa-search"></label>
+         </form>
+    </header>
+
+    <section class="banner" id="banner">
+      <div class="content" id="content">
+        <h3>Explore fun in Harvesting</h3>
+        <p>We must give more in order to get more.It is the generous giving of ourselves that produces the generous harvest.</p>
+        <a href="#gardenn" class="btn">Explore for More...</a>
+    </div>
+    </section>
+    <br><br>
+
+    <section class="gardenn" id="gardenn">
+      <h1 class="logo"> <span> Fruit </span> Shack </h1><br>
+      <div class="box-container">
+
+          <div class="box">
+              <div class="image">
+                  <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag1.jpg" alt="reload">
+              </div>
+              <div class="content">
+                  <h3>Soil Fertility</h3>
+                  <p>Soil pH around 6.0 to 7.5, slightly acidic, is optimal for fruit trees to absorb nutrients. 
+                      There are certain soil conditions that are detrimental to the health of fruit trees.</p>
+                  <a href="#" class="btn">Dive In...</a>
+              </div>
+          </div>
+     
+          <div class="box">
+              <div class="image">
+                  <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag2.jpg" alt="reload">
+              </div>
+              <div class="content">
+                  <h3>Seedling</h3>
+                  <p>A fruit is the ripened ovary, while a seed is a ripened ovule, containing the embryo 
+                  to sustain it through the process of germination and the early development of the seedling</p>
+                  <a href="#" class="btn">Dive In...</a>
+              </div>
+          </div>
+                 
+          <div class="box">
+              <div class="image">
+                  <img src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/images/imag3.jpg" alt="reload">
+              </div>
+              <div class="content">
+                  <h3>Plant Sapling</h3>
+                  <p>Fruits mature more slowly than vegetables, but some grow quicker than others. It can produce fruit 
+                      in the first year. The skin of a fruit may be thin, tough, or hard.</p>
+                  <a href="book.php" class="btn">Dive In...</a>
+              </div>
+          </div>
+      </div>
+     
+      <div class="load-more"> <a href="fruits.html" class="btn">Load More...</a> </div>
+    </section>
+
+    <!-- Insert the chatbot code here -->
+    <div class="chat-popup" id="myForm">
+      <!-- Paste the chatbot code here -->
+      <p class="open-button"><i onclick="openForm()" class="fas fa-comment" style="font-size:48px;color:red"></i></p>
+      <div class="msger-popup">
+          <section class="msger">
+              <header class="msger-header">
+                  <div class="msger-header-title">
+                  </div>
+                  <span class="msger-header-close" onclick="closeForm()">&#10006;</span>
+              </header>
+              <main class="msger-chat">
+                  <div class="msg left-msg">
+                      <div class="msg-img" style="background-image: url(C:/Users/saira/Downloads/chatbot.png)"></div>
+                      <div class="msg-bubble">
+                          <div class="msg-info">
+                              <div class="msg-info-name">Chatbot</div>
+                              <div class="msg-info-time">12:45</div>
+                          </div>
+                          <div class="msg-text">
+                              Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+                          </div>
+                      </div>
+                  </div>
+              </main>
+              <form class="msger-inputarea">
+                  <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+                  <button type="submit" class="msger-send-btn">Send</button>
+              </form>
+          </section>
+      </div>
+  </div>
+
+  <section class="contact" id="contact"><br><br>
+    <h1 class="logo"> Contact Us</h1>   
+        <div class="row">
+            <form action="">
+                <input type="text" placeholder="name" class="box">
+                <input type="email" placeholder="email" class="box">
+                <input type="number" placeholder="number" class="box">
+                <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>  
+                <input type="submit" class="btn" value="send message">                 
+            </form>
+        </div>
+    </section>
+
+    <footer>
+      created by <span>Admins </span> | all rights reserved!
+  </footer>
+
+    <script src="C:/Users/saira/Documents/Chatbot/Crop_Chatbot/templates/garden/js/gardenscript.js"></script>
+    <script>
+        // Add the openForm and closeForm functions here
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+    <script>
+      const msgerForm = get(".msger-inputarea");
+      const msgerInput = get(".msger-input");
+      const msgerChat = get(".msger-chat");
+      const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+      const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+      const BOT_NAME = "    ChatBot";
+      const PERSON_NAME = "You";
+
+      msgerForm.addEventListener("submit", event => {
+          event.preventDefault();
+          const msgText = msgerInput.value;
+          if (!msgText) return;
+          appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+          msgerInput.value = "";
+          botResponse(msgText);
+      });
+
+      function appendMessage(name, img, side, text) {
+          const msgHTML = `
+          <div class="msg ${side}-msg">
+              <div class="msg-img" style="background-image: url(${img})"></div>
+              <div class="msg-bubble">
+                  <div class="msg-info">
+                      <div class="msg-info-name">${name}</div>
+                      <div class="msg-info-time">${formatDate(new Date())}</div>
+                  </div>
+                  <div class="msg-text">${text}</div>
+              </div>
+          </div>
+          `;
+          msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+          msgerChat.scrollTop += 500;
+      }
+
+      function botResponse(rawText) {
+          // Assume you have the botResponse function implemented as in the original chatbot code
+          // ...
+      }
+
+      function get(selector, root = document) {
+          return root.querySelector(selector);
+      }
+
+      function formatDate(date) {
+          const h = "0" + date.getHours();
+          const m = "0" + date.getMinutes();
+          return `${h.slice(-2)}:${m.slice(-2)}`;
+      }
+  </script>
+</body>
+
+</html>
